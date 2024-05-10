@@ -11,6 +11,7 @@ import CheckReset from 'Routes/Reset/CheckReset'
 import Reset from 'Routes/Reset/Reset'
 import SignUp from 'Routes/SignUp/SignUp'
 import Verify from 'Routes/Verify/Verify'
+import SWCamera from 'Routes/SWCamera/SWCamera'
 
 const Routes = () => (
   <ReactRouterRoutes>
@@ -22,6 +23,14 @@ const Routes = () => (
     <Route path="/verify/:code" element={<Verify />}/>
     
     {/* crud post routes */}
+    <Route
+      path="/swcamera"
+      element={
+        <RequireAuth>
+          <SWCamera />
+        </RequireAuth>
+      }
+      />
     <Route
       path="/change-password"
       element={

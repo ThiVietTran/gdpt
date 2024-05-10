@@ -47,6 +47,11 @@ export default class API {
   static deletePost = (id: number) => (
     _delete(`/post/${id}`)
   )
+
+  // CAMERA
+  static cameraCommand = (body: { cmd: string }) => (
+    _post('/camera', body)
+  )
 }
 
 // internal utils

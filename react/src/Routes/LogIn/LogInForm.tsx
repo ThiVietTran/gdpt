@@ -17,7 +17,7 @@ const LogInForm = () => {
 
   useEffect(() => {
     if (user.id) {
-      navigate("/posts", { replace: true})
+      navigate("/swcamera", { replace: true})
     }
   }, [user, navigate])
 
@@ -26,7 +26,7 @@ const LogInForm = () => {
       if (user.id) {
         setUser(user);
         setFields({} as User)
-        const { from } = location.state || { from: { pathname: "/posts" } };
+        const { from } = location.state || { from: { pathname: "/swcamera" } };
         navigate(from);
       }
     });

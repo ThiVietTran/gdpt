@@ -45,6 +45,9 @@ func (srv *server) ConfigureRouter() {
 	srv.POST("/post", handlers.CreatePost)
 	srv.PUT("/post", handlers.UpdatePost)
 	srv.DELETE("/post/:id", handlers.DeletePost)
+
+	//CAMERA
+	srv.POST("/camera", handlers.CameraCommand)
 }
 
 // srvHandler is the extended handler function that our API routes use
