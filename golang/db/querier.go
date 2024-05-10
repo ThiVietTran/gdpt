@@ -10,10 +10,12 @@ import (
 
 type Querier interface {
 	CreatePost(ctx context.Context, arg CreatePostParams) (Post, error)
+	CreateQuestion(ctx context.Context, arg CreateQuestionParams) (int32, error)
 	CreateReset(ctx context.Context, arg CreateResetParams) (Reset, error)
 	CreateUser(ctx context.Context, arg CreateUserParams) (User, error)
 	DeletePostByIDs(ctx context.Context, arg DeletePostByIDsParams) error
 	DeleteResetsForUser(ctx context.Context, userID int64) error
+	FindAllQuestions(ctx context.Context) ([]FindAllQuestionsRow, error)
 	FindPostByIDs(ctx context.Context, arg FindPostByIDsParams) (Post, error)
 	FindPostsByAuthor(ctx context.Context, authorID int64) ([]Post, error)
 	FindResetByCode(ctx context.Context, code string) (Reset, error)
@@ -21,6 +23,7 @@ type Querier interface {
 	FindUserByID(ctx context.Context, id int64) (User, error)
 	FindUserByVerificationCode(ctx context.Context, verification string) (User, error)
 	UpdatePost(ctx context.Context, arg UpdatePostParams) (Post, error)
+	UpdateQuestionExplain(ctx context.Context, arg UpdateQuestionExplainParams) error
 	UpdateUserPassword(ctx context.Context, arg UpdateUserPasswordParams) error
 	UpdateUserStatus(ctx context.Context, arg UpdateUserStatusParams) error
 }

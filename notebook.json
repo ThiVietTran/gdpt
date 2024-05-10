@@ -1,0 +1,33 @@
+[
+    {
+        "id": 2,
+        "author_id": 1,
+        "title": "who rew",
+        "body": "dsa jlof",
+        "status": "published",
+        "created_at": "2024-05-10T12:27:34.672582Z",
+        "updated_at": "2024-05-10T12:27:34.672582Z"
+    },
+    {
+        "id": 1,
+        "author_id": 1,
+        "title": "test",
+        "body": "teest te",
+        "status": "published",
+        "created_at": "2024-05-10T12:27:23.23769Z",
+        "updated_at": "2024-05-10T12:27:23.23769Z"
+    }
+]
+
+
+#! /bin/bash
+
+sudo docker stop $(sudo docker ps -a -q)
+sudo docker rm $(sudo docker ps -a -q)
+sudo docker volume prune
+sudo docker rmi -f $(sudo docker images -q)
+sudo docker volume ls
+sudo docker images
+
+
+cat tracnghiem_backup.sql | sudo docker exec -i ad0ec138493b psql -U huyanh -d tracnghiem

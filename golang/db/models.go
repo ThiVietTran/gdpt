@@ -5,6 +5,7 @@
 package db
 
 import (
+	"database/sql"
 	"database/sql/driver"
 	"fmt"
 	"time"
@@ -95,6 +96,17 @@ func (ns NullUserStatus) Value() (driver.Value, error) {
 	return ns.UserStatus, nil
 }
 
+type Category struct {
+	ID   int32  `json:"id"`
+	Name string `json:"name"`
+}
+
+type Option struct {
+	ID       int32        `json:"id"`
+	Text     string       `json:"text"`
+	IsAnswer sql.NullBool `json:"is_answer"`
+}
+
 type Post struct {
 	ID        int64      `json:"id"`
 	AuthorID  int64      `json:"author_id"`
@@ -103,6 +115,17 @@ type Post struct {
 	Status    PostStatus `json:"status"`
 	CreatedAt time.Time  `json:"created_at"`
 	UpdatedAt time.Time  `json:"updated_at"`
+}
+
+type Question struct {
+	ID          int32          `json:"id"`
+	Categoryid  int32          `json:"categoryid"`
+	Text        string         `json:"text"`
+	Option1id   int32          `json:"option1id"`
+	Option2id   int32          `json:"option2id"`
+	Option3id   int32          `json:"option3id"`
+	Option4id   int32          `json:"option4id"`
+	Explanation sql.NullString `json:"explanation"`
 }
 
 type Reset struct {
