@@ -1,7 +1,7 @@
 CREATE SCHEMA questions;
 
 CREATE TABLE questions (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     categoryid INTEGER NOT NULL,
     text TEXT NOT NULL,
     option1id INTEGER NOT NULL,

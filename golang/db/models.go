@@ -118,7 +118,7 @@ type Post struct {
 }
 
 type Question struct {
-	ID          int32          `json:"id"`
+	ID          int64          `json:"id"`
 	Categoryid  int32          `json:"categoryid"`
 	Text        string         `json:"text"`
 	Option1id   int32          `json:"option1id"`

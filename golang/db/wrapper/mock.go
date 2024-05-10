@@ -51,10 +51,10 @@ func (mr *MockQuerierMockRecorder) CreatePost(ctx, arg interface{}) *gomock.Call
 }
 
 // CreateQuestion mocks base method.
-func (m *MockQuerier) CreateQuestion(ctx context.Context, arg db.CreateQuestionParams) (int32, error) {
+func (m *MockQuerier) CreateQuestion(ctx context.Context, arg db.CreateQuestionParams) (db.Question, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "CreateQuestion", ctx, arg)
-	ret0, _ := ret[0].(int32)
+	ret0, _ := ret[0].(db.Question)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -109,6 +109,20 @@ func (mr *MockQuerierMockRecorder) DeletePostByIDs(ctx, arg interface{}) *gomock
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeletePostByIDs", reflect.TypeOf((*MockQuerier)(nil).DeletePostByIDs), ctx, arg)
 }
 
+// DeleteQuestionByIDs mocks base method.
+func (m *MockQuerier) DeleteQuestionByIDs(ctx context.Context, id int64) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteQuestionByIDs", ctx, id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteQuestionByIDs indicates an expected call of DeleteQuestionByIDs.
+func (mr *MockQuerierMockRecorder) DeleteQuestionByIDs(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteQuestionByIDs", reflect.TypeOf((*MockQuerier)(nil).DeleteQuestionByIDs), ctx, id)
+}
+
 // DeleteResetsForUser mocks base method.
 func (m *MockQuerier) DeleteResetsForUser(ctx context.Context, userID int64) error {
 	m.ctrl.T.Helper()
@@ -124,10 +138,10 @@ func (mr *MockQuerierMockRecorder) DeleteResetsForUser(ctx, userID interface{}) 
 }
 
 // FindAllQuestions mocks base method.
-func (m *MockQuerier) FindAllQuestions(ctx context.Context) ([]db.FindAllQuestionsRow, error) {
+func (m *MockQuerier) FindAllQuestions(ctx context.Context) ([]db.Question, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "FindAllQuestions", ctx)
-	ret0, _ := ret[0].([]db.FindAllQuestionsRow)
+	ret0, _ := ret[0].([]db.Question)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
@@ -166,6 +180,21 @@ func (m *MockQuerier) FindPostsByAuthor(ctx context.Context, authorID int64) ([]
 func (mr *MockQuerierMockRecorder) FindPostsByAuthor(ctx, authorID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindPostsByAuthor", reflect.TypeOf((*MockQuerier)(nil).FindPostsByAuthor), ctx, authorID)
+}
+
+// FindQuestionByIDs mocks base method.
+func (m *MockQuerier) FindQuestionByIDs(ctx context.Context, id int64) (db.Question, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindQuestionByIDs", ctx, id)
+	ret0, _ := ret[0].(db.Question)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindQuestionByIDs indicates an expected call of FindQuestionByIDs.
+func (mr *MockQuerierMockRecorder) FindQuestionByIDs(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindQuestionByIDs", reflect.TypeOf((*MockQuerier)(nil).FindQuestionByIDs), ctx, id)
 }
 
 // FindResetByCode mocks base method.
@@ -244,11 +273,12 @@ func (mr *MockQuerierMockRecorder) UpdatePost(ctx, arg interface{}) *gomock.Call
 }
 
 // UpdateQuestionExplain mocks base method.
-func (m *MockQuerier) UpdateQuestionExplain(ctx context.Context, arg db.UpdateQuestionExplainParams) error {
+func (m *MockQuerier) UpdateQuestionExplain(ctx context.Context, arg db.UpdateQuestionExplainParams) (db.Question, error) {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "UpdateQuestionExplain", ctx, arg)
-	ret0, _ := ret[0].(error)
-	return ret0
+	ret0, _ := ret[0].(db.Question)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
 }
 
 // UpdateQuestionExplain indicates an expected call of UpdateQuestionExplain.

@@ -1,4 +1,4 @@
-import { Post, User } from "Shared/Models"
+import { Post, Question, User } from "Shared/Models"
 
 export default class API {
   // SESSION
@@ -51,6 +51,23 @@ export default class API {
   // CAMERA
   static cameraCommand = (body: { cmd: string }) => (
     _post('/camera', body)
+  )
+
+  // QUESTIONS
+  static getQuestions = () => (
+    _get('/question')
+  )
+  static getQuestion = (id: number) => (
+    _get(`/question/${id}`)
+  )
+  static createQuestion = (body: Question) => (
+    _post('/question', body)
+  )
+  static updateQuestion = (body: Question) => (
+    _put('/question', body)
+  )
+  static deleteQuestion = (id: number) => (
+    _delete(`/question/${id}`)
   )
 }
 

@@ -4,7 +4,6 @@ import ChangePassword from 'Routes/Account/ChangePassword'
 import { NoMatch, RequireAuth } from "Routes/Helpers";
 import Home from 'Routes/Home/Home'
 import LogIn from 'Routes/LogIn/LogIn'
-import Post from 'Routes/Posts/Post'
 import PostForm from 'Routes/Posts/PostForm'
 import Posts from 'Routes/Posts/Posts'
 import CheckReset from 'Routes/Reset/CheckReset'
@@ -12,6 +11,10 @@ import Reset from 'Routes/Reset/Reset'
 import SignUp from 'Routes/SignUp/SignUp'
 import Verify from 'Routes/Verify/Verify'
 import SWCamera from 'Routes/SWCamera/SWCamera'
+import Questions from "./Questions/Questions";
+import QuestionForm from "./Questions/QuestionForm";
+import ViewQuestion from "./Questions/Question";
+import ViewPost from "Routes/Posts/Post";
 
 const Routes = () => (
   <ReactRouterRoutes>
@@ -67,7 +70,39 @@ const Routes = () => (
       path="/post/:id"
       element={
         <RequireAuth>
-          <Post />
+          <ViewPost />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/questions"
+      element={
+        <RequireAuth>
+          <Questions />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/question/create"
+      element={
+        <RequireAuth>
+          <QuestionForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/question/:id/edit"
+      element={
+        <RequireAuth>
+          <QuestionForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/question/:id"
+      element={
+        <RequireAuth>
+          <ViewQuestion />
         </RequireAuth>
       }
     />

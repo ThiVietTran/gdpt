@@ -12,7 +12,7 @@ import (
 
 const createQuestion = `-- name: CreateQuestion :one
 INSERT INTO questions (categoryid, text, option1id, option2id, option3id, option4id, explanation) 
-  VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id
+  VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id, categoryid, text, option1id, option2id, option3id, option4id, explanation
 `
 
 type CreateQuestionParams struct {
@@ -25,7 +25,7 @@ type CreateQuestionParams struct {
 	Explanation sql.NullString `json:"explanation"`
 }
 
-func (q *Queries) CreateQuestion(ctx context.Context, arg CreateQuestionParams) (int32, error) {
+func (q *Queries) CreateQuestion(ctx context.Context, arg CreateQuestionParams) (Question, error) {
 	row := q.db.QueryRow(ctx, createQuestion,
 		arg.Categoryid,
 		arg.Text,
@@ -35,63 +35,51 @@ func (q *Queries) CreateQuestion(ctx context.Context, arg CreateQuestionParams) 
 		arg.Option4id,
 		arg.Explanation,
 	)
-	var id int32
-	err := row.Scan(&id)
-	return id, err
+	var i Question
+	err := row.Scan(
+		&i.ID,
+		&i.Categoryid,
+		&i.Text,
+		&i.Option1id,
+		&i.Option2id,
+		&i.Option3id,
+		&i.Option4id,
+		&i.Explanation,
+	)
+	return i, err
+}
+
+const deleteQuestionByIDs = `-- name: DeleteQuestionByIDs :exec
+DELETE FROM questions WHERE id = $1
+`
+
+func (q *Queries) DeleteQuestionByIDs(ctx context.Context, id int64) error {
+	_, err := q.db.Exec(ctx, deleteQuestionByIDs, id)
+	return err
 }
 
 const findAllQuestions = `-- name: FindAllQuestions :many
-SELECT q.id, q.text, q.explanation, c.id, c.name, o1.id, o1.text, o1.is_answer, o2.id, o2.text, o2.is_answer, o3.id, o3.text, o3.is_answer, o4.id, o4.text, o4.is_answer 
-FROM questions q INNER JOIN options o1 ON q.option1id = o1.id INNER JOIN options o2 ON q.option2id = o2.id INNER JOIN options o3 ON q.option3id = o3.id INNER JOIN options o4 ON q.option4id = o4.id INNER JOIN categories c ON q.categoryid = c.id ORDER BY q.id
+SELECT id, categoryid, text, option1id, option2id, option3id, option4id, explanation FROM questions ORDER BY id
 `
 
-type FindAllQuestionsRow struct {
-	ID          int32          `json:"id"`
-	Text        string         `json:"text"`
-	Explanation sql.NullString `json:"explanation"`
-	ID_2        int32          `json:"id_2"`
-	Name        string         `json:"name"`
-	ID_3        int32          `json:"id_3"`
-	Text_2      string         `json:"text_2"`
-	IsAnswer    sql.NullBool   `json:"is_answer"`
-	ID_4        int32          `json:"id_4"`
-	Text_3      string         `json:"text_3"`
-	IsAnswer_2  sql.NullBool   `json:"is_answer_2"`
-	ID_5        int32          `json:"id_5"`
-	Text_4      string         `json:"text_4"`
-	IsAnswer_3  sql.NullBool   `json:"is_answer_3"`
-	ID_6        int32          `json:"id_6"`
-	Text_5      string         `json:"text_5"`
-	IsAnswer_4  sql.NullBool   `json:"is_answer_4"`
-}
-
-func (q *Queries) FindAllQuestions(ctx context.Context) ([]FindAllQuestionsRow, error) {
+func (q *Queries) FindAllQuestions(ctx context.Context) ([]Question, error) {
 	rows, err := q.db.Query(ctx, findAllQuestions)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-	items := []FindAllQuestionsRow{}
+	items := []Question{}
 	for rows.Next() {
-		var i FindAllQuestionsRow
+		var i Question
 		if err := rows.Scan(
 			&i.ID,
+			&i.Categoryid,
 			&i.Text,
+			&i.Option1id,
+			&i.Option2id,
+			&i.Option3id,
+			&i.Option4id,
 			&i.Explanation,
-			&i.ID_2,
-			&i.Name,
-			&i.ID_3,
-			&i.Text_2,
-			&i.IsAnswer,
-			&i.ID_4,
-			&i.Text_3,
-			&i.IsAnswer_2,
-			&i.ID_5,
-			&i.Text_4,
-			&i.IsAnswer_3,
-			&i.ID_6,
-			&i.Text_5,
-			&i.IsAnswer_4,
 		); err != nil {
 			return nil, err
 		}
@@ -103,16 +91,47 @@ func (q *Queries) FindAllQuestions(ctx context.Context) ([]FindAllQuestionsRow, 
 	return items, nil
 }
 
-const updateQuestionExplain = `-- name: UpdateQuestionExplain :exec
-UPDATE questions SET explanation = $1 WHERE id = $2
+const findQuestionByIDs = `-- name: FindQuestionByIDs :one
+SELECT id, categoryid, text, option1id, option2id, option3id, option4id, explanation FROM questions WHERE id = $1 LIMIT 1
+`
+
+func (q *Queries) FindQuestionByIDs(ctx context.Context, id int64) (Question, error) {
+	row := q.db.QueryRow(ctx, findQuestionByIDs, id)
+	var i Question
+	err := row.Scan(
+		&i.ID,
+		&i.Categoryid,
+		&i.Text,
+		&i.Option1id,
+		&i.Option2id,
+		&i.Option3id,
+		&i.Option4id,
+		&i.Explanation,
+	)
+	return i, err
+}
+
+const updateQuestionExplain = `-- name: UpdateQuestionExplain :one
+UPDATE questions SET explanation = $1 WHERE id = $2 RETURNING id, categoryid, text, option1id, option2id, option3id, option4id, explanation
 `
 
 type UpdateQuestionExplainParams struct {
 	Explanation sql.NullString `json:"explanation"`
-	ID          int32          `json:"id"`
+	ID          int64          `json:"id"`
 }
 
-func (q *Queries) UpdateQuestionExplain(ctx context.Context, arg UpdateQuestionExplainParams) error {
-	_, err := q.db.Exec(ctx, updateQuestionExplain, arg.Explanation, arg.ID)
-	return err
+func (q *Queries) UpdateQuestionExplain(ctx context.Context, arg UpdateQuestionExplainParams) (Question, error) {
+	row := q.db.QueryRow(ctx, updateQuestionExplain, arg.Explanation, arg.ID)
+	var i Question
+	err := row.Scan(
+		&i.ID,
+		&i.Categoryid,
+		&i.Text,
+		&i.Option1id,
+		&i.Option2id,
+		&i.Option3id,
+		&i.Option4id,
+		&i.Explanation,
+	)
+	return i, err
 }

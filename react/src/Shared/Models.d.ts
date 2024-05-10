@@ -9,3 +9,14 @@ export type User = {
   email: string,
   pass: string
 }
+
+export type Question = {
+  id?: number,
+  categoryId: number,
+  text: string,
+  option1Id: number,
+  option2Id: number,
+  option3Id: number,
+  option4Id: number,
+  explanation?: string
+}

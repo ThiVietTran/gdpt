@@ -27,7 +27,7 @@ const Verify = () => {
       run(API.verify({ code }), user => {
         setUser(user);
         setTimeout(() => {
-          navigate("/posts")
+          navigate("/questions")
         }, 2500);
       })
     }

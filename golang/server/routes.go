@@ -50,8 +50,11 @@ func (srv *server) ConfigureRouter() {
 	srv.POST("/camera", handlers.CameraCommand)
 
 	//TRACNGHIEM
-	srv.GET("/listcauhoi", handlers.GetPost)
-	srv.POST("/themcauhoi", handlers.CreatePost)
+	srv.GET("/question", handlers.GetQuestions)
+	srv.GET("/question/:id", handlers.GetQuestion)
+	srv.POST("/question", handlers.CreateQuestion)
+	srv.PUT("/question", handlers.UpdateQuestion)
+	srv.DELETE("/question/:id", handlers.DeleteQuestion)
 }
 
 // srvHandler is the extended handler function that our API routes use
