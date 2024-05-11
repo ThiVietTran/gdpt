@@ -44,7 +44,7 @@ const SingleQuestion: React.FC<Question> = ({
   return (
     <Segment.Group>
       <Header attached='top' as='h3'>
-        <Link to={`/question/${id}`}>{bac_hoc_id}</Link>
+        <Link to={`/question/${id}`}>{id}</Link>
       </Header>
       <Segment attached='bottom'>
         <p>{question_text}</p>
