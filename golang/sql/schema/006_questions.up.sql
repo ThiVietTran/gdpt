@@ -2,16 +2,12 @@ CREATE SCHEMA questions;
 
 CREATE TABLE questions (
     id BIGSERIAL PRIMARY KEY,
-    categoryid INTEGER NOT NULL,
-    text TEXT NOT NULL,
-    option1id INTEGER NOT NULL,
-    option2id INTEGER NOT NULL,
-    option3id INTEGER NOT NULL,
-    option4id INTEGER NOT NULL,
+    bac_hoc_id TEXT NOT NULL,
+    question_text TEXT NOT NULL,
     explanation TEXT,
-    FOREIGN KEY (categoryid) REFERENCES categories(id),
-    FOREIGN KEY (option1id) REFERENCES options(id),
-    FOREIGN KEY (option2id) REFERENCES options(id),
-    FOREIGN KEY (option3id) REFERENCES options(id),
-    FOREIGN KEY (option4id) REFERENCES options(id)
+    option1 JSONB NOT NULL,
+    option2 JSONB NOT NULL,
+    option3 JSONB NOT NULL,
+    option4 JSONB NOT NULL,
+    FOREIGN KEY (bac_hoc_id) REFERENCES bac_hoc(id)
 );

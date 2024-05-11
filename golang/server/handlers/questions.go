@@ -23,13 +23,13 @@ func CreateQuestion(env env.Env, user *db.User, w http.ResponseWriter, r *http.R
 	}
 
 	return write.JSONorErr(env.DB().CreateQuestion(r.Context(), db.CreateQuestionParams{
-		Categoryid:  p.Categoryid,
-		Text:        p.Text,
-		Option1id:   p.Option1id,
-		Option2id:   p.Option2id,
-		Option3id:   p.Option3id,
-		Option4id:   p.Option4id,
-		Explanation: p.Explanation,
+		BacHocID:     p.BacHocID,
+		QuestionText: p.QuestionText,
+		Option1:      p.Option1,
+		Option2:      p.Option2,
+		Option3:      p.Option3,
+		Option4:      p.Option4,
+		Explanation:  p.Explanation,
 	}))
 }
 
@@ -74,9 +74,15 @@ func UpdateQuestion(env env.Env, user *db.User, w http.ResponseWriter, r *http.R
 		return write.Error(errors.NoJSONBody)
 	}
 
-	return write.JSONorErr(env.DB().UpdateQuestionExplain(r.Context(), db.UpdateQuestionExplainParams{
-		ID:          p.ID,
-		Explanation: p.Explanation,
+	return write.JSONorErr(env.DB().UpdateQuestion(r.Context(), db.UpdateQuestionParams{
+		BacHocID:     p.BacHocID,
+		QuestionText: p.QuestionText,
+		Option1:      p.Option1,
+		Option2:      p.Option2,
+		Option3:      p.Option3,
+		Option4:      p.Option4,
+		Explanation:  p.Explanation,
+		ID:           p.ID,
 	}))
 }
 

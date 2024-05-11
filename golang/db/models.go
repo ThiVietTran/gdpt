@@ -9,6 +9,8 @@ import (
 	"database/sql/driver"
 	"fmt"
 	"time"
+
+	"github.com/jackc/pgtype"
 )
 
 type PostStatus string
@@ -96,8 +98,8 @@ func (ns NullUserStatus) Value() (driver.Value, error) {
 	return ns.UserStatus, nil
 }
 
-type Category struct {
-	ID   int32  `json:"id"`
+type BacHoc struct {
+	ID   string `json:"id"`
 	Name string `json:"name"`
 }
 
@@ -118,14 +120,14 @@ type Post struct {
 }
 
 type Question struct {
-	ID          int64          `json:"id"`
-	Categoryid  int32          `json:"categoryid"`
-	Text        string         `json:"text"`
-	Option1id   int32          `json:"option1id"`
-	Option2id   int32          `json:"option2id"`
-	Option3id   int32          `json:"option3id"`
-	Option4id   int32          `json:"option4id"`
-	Explanation sql.NullString `json:"explanation"`
+	ID           int64          `json:"id"`
+	BacHocID     string         `json:"bac_hoc_id"`
+	QuestionText string         `json:"question_text"`
+	Explanation  sql.NullString `json:"explanation"`
+	Option1      pgtype.JSONB   `json:"option1"`
+	Option2      pgtype.JSONB   `json:"option2"`
+	Option3      pgtype.JSONB   `json:"option3"`
+	Option4      pgtype.JSONB   `json:"option4"`
 }
 
 type Reset struct {

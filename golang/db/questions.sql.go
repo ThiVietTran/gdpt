@@ -8,43 +8,45 @@ package db
 import (
 	"context"
 	"database/sql"
+
+	"github.com/jackc/pgtype"
 )
 
 const createQuestion = `-- name: CreateQuestion :one
-INSERT INTO questions (categoryid, text, option1id, option2id, option3id, option4id, explanation) 
-  VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id, categoryid, text, option1id, option2id, option3id, option4id, explanation
+INSERT INTO questions (bac_hoc_id, question_text, option1, option2, option3, option4, explanation) 
+  VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id, bac_hoc_id, question_text, explanation, option1, option2, option3, option4
 `
 
 type CreateQuestionParams struct {
-	Categoryid  int32          `json:"categoryid"`
-	Text        string         `json:"text"`
-	Option1id   int32          `json:"option1id"`
-	Option2id   int32          `json:"option2id"`
-	Option3id   int32          `json:"option3id"`
-	Option4id   int32          `json:"option4id"`
-	Explanation sql.NullString `json:"explanation"`
+	BacHocID     string         `json:"bac_hoc_id"`
+	QuestionText string         `json:"question_text"`
+	Option1      pgtype.JSONB   `json:"option1"`
+	Option2      pgtype.JSONB   `json:"option2"`
+	Option3      pgtype.JSONB   `json:"option3"`
+	Option4      pgtype.JSONB   `json:"option4"`
+	Explanation  sql.NullString `json:"explanation"`
 }
 
 func (q *Queries) CreateQuestion(ctx context.Context, arg CreateQuestionParams) (Question, error) {
 	row := q.db.QueryRow(ctx, createQuestion,
-		arg.Categoryid,
-		arg.Text,
-		arg.Option1id,
-		arg.Option2id,
-		arg.Option3id,
-		arg.Option4id,
+		arg.BacHocID,
+		arg.QuestionText,
+		arg.Option1,
+		arg.Option2,
+		arg.Option3,
+		arg.Option4,
 		arg.Explanation,
 	)
 	var i Question
 	err := row.Scan(
 		&i.ID,
-		&i.Categoryid,
-		&i.Text,
-		&i.Option1id,
-		&i.Option2id,
-		&i.Option3id,
-		&i.Option4id,
+		&i.BacHocID,
+		&i.QuestionText,
 		&i.Explanation,
+		&i.Option1,
+		&i.Option2,
+		&i.Option3,
+		&i.Option4,
 	)
 	return i, err
 }
@@ -59,7 +61,7 @@ func (q *Queries) DeleteQuestionByIDs(ctx context.Context, id int64) error {
 }
 
 const findAllQuestions = `-- name: FindAllQuestions :many
-SELECT id, categoryid, text, option1id, option2id, option3id, option4id, explanation FROM questions ORDER BY id
+SELECT id, bac_hoc_id, question_text, explanation, option1, option2, option3, option4 FROM questions ORDER BY id
 `
 
 func (q *Queries) FindAllQuestions(ctx context.Context) ([]Question, error) {
@@ -73,13 +75,13 @@ func (q *Queries) FindAllQuestions(ctx context.Context) ([]Question, error) {
 		var i Question
 		if err := rows.Scan(
 			&i.ID,
-			&i.Categoryid,
-			&i.Text,
-			&i.Option1id,
-			&i.Option2id,
-			&i.Option3id,
-			&i.Option4id,
+			&i.BacHocID,
+			&i.QuestionText,
 			&i.Explanation,
+			&i.Option1,
+			&i.Option2,
+			&i.Option3,
+			&i.Option4,
 		); err != nil {
 			return nil, err
 		}
@@ -92,7 +94,7 @@ func (q *Queries) FindAllQuestions(ctx context.Context) ([]Question, error) {
 }
 
 const findQuestionByIDs = `-- name: FindQuestionByIDs :one
-SELECT id, categoryid, text, option1id, option2id, option3id, option4id, explanation FROM questions WHERE id = $1 LIMIT 1
+SELECT id, bac_hoc_id, question_text, explanation, option1, option2, option3, option4 FROM questions WHERE id = $1 LIMIT 1
 `
 
 func (q *Queries) FindQuestionByIDs(ctx context.Context, id int64) (Question, error) {
@@ -100,38 +102,63 @@ func (q *Queries) FindQuestionByIDs(ctx context.Context, id int64) (Question, er
 	var i Question
 	err := row.Scan(
 		&i.ID,
-		&i.Categoryid,
-		&i.Text,
-		&i.Option1id,
-		&i.Option2id,
-		&i.Option3id,
-		&i.Option4id,
+		&i.BacHocID,
+		&i.QuestionText,
 		&i.Explanation,
+		&i.Option1,
+		&i.Option2,
+		&i.Option3,
+		&i.Option4,
 	)
 	return i, err
 }
 
-const updateQuestionExplain = `-- name: UpdateQuestionExplain :one
-UPDATE questions SET explanation = $1 WHERE id = $2 RETURNING id, categoryid, text, option1id, option2id, option3id, option4id, explanation
+const updateQuestion = `-- name: UpdateQuestion :one
+UPDATE questions 
+SET 
+    bac_hoc_id = $1,
+    question_text = $2,
+    option1 = $3,
+    option2 = $4,
+    option3 = $5,
+    option4 = $6,
+    explanation = $7 
+WHERE id = $8
+RETURNING id, bac_hoc_id, question_text, explanation, option1, option2, option3, option4
 `
 
-type UpdateQuestionExplainParams struct {
-	Explanation sql.NullString `json:"explanation"`
-	ID          int64          `json:"id"`
+type UpdateQuestionParams struct {
+	BacHocID     string         `json:"bac_hoc_id"`
+	QuestionText string         `json:"question_text"`
+	Option1      pgtype.JSONB   `json:"option1"`
+	Option2      pgtype.JSONB   `json:"option2"`
+	Option3      pgtype.JSONB   `json:"option3"`
+	Option4      pgtype.JSONB   `json:"option4"`
+	Explanation  sql.NullString `json:"explanation"`
+	ID           int64          `json:"id"`
 }
 
-func (q *Queries) UpdateQuestionExplain(ctx context.Context, arg UpdateQuestionExplainParams) (Question, error) {
-	row := q.db.QueryRow(ctx, updateQuestionExplain, arg.Explanation, arg.ID)
+func (q *Queries) UpdateQuestion(ctx context.Context, arg UpdateQuestionParams) (Question, error) {
+	row := q.db.QueryRow(ctx, updateQuestion,
+		arg.BacHocID,
+		arg.QuestionText,
+		arg.Option1,
+		arg.Option2,
+		arg.Option3,
+		arg.Option4,
+		arg.Explanation,
+		arg.ID,
+	)
 	var i Question
 	err := row.Scan(
 		&i.ID,
-		&i.Categoryid,
-		&i.Text,
-		&i.Option1id,
-		&i.Option2id,
-		&i.Option3id,
-		&i.Option4id,
+		&i.BacHocID,
+		&i.QuestionText,
 		&i.Explanation,
+		&i.Option1,
+		&i.Option2,
+		&i.Option3,
+		&i.Option4,
 	)
 	return i, err
 }

@@ -17,7 +17,7 @@ const LogInForm = () => {
 
   useEffect(() => {
     if (user.id) {
-      navigate("/questions", { replace: true})
+      navigate("/question/create", { replace: true})
     }
   }, [user, navigate])
 
@@ -26,7 +26,7 @@ const LogInForm = () => {
       if (user.id) {
         setUser(user);
         setFields({} as User)
-        const { from } = location.state || { from: { pathname: "/questions" } };
+        const { from } = location.state || { from: { pathname: "/question/create" } };
         navigate(from);
       }
     });

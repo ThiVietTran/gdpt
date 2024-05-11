@@ -12,11 +12,24 @@ export type User = {
 
 export type Question = {
   id?: number,
-  categoryId: number,
-  text: string,
-  option1Id: number,
-  option2Id: number,
-  option3Id: number,
-  option4Id: number,
-  explanation?: string
+  bac_hoc_id: string, // Change categoryID to bac_hoc_id
+  question_text: string, // Change text to question
+  explanation?: string,
+  option1: { // Represent JSONB structure for option1
+    option: string,
+    is_answer: boolean
+  },
+  option2: { // Represent JSONB structure for option2
+    option: string,
+    is_answer: boolean
+  },
+  option3: { // Represent JSONB structure for option3
+    option: string,
+    is_answer: boolean
+  },
+  option4: { // Represent JSONB structure for option4
+    option: string,
+    is_answer: boolean
+  }
 }
+

@@ -31,6 +31,30 @@ const Questions = () => {
 
 export default Questions;
 
+
+interface SingleQuestionProps extends Question {
+  id: number;
+}
+
+const SingleQuestion: React.FC<SingleQuestionProps> = ({ id, bac_hoc_id, question_text, option1, option2, option3, option4, explanation }: SingleQuestionProps) => (
+  <Segment.Group key={id}>
+    <Header attached='top' as='h3'>
+      <Link to={`/question/${id}`}>{bac_hoc_id}</Link>
+    </Header>
+    <Segment attached='bottom'>
+      <p>{question_text}</p>
+      <ul>
+        <li>{option1.option}</li>
+        <li>{option2.option}</li>
+        <li>{option3.option}</li>
+        <li>{option4.option}</li>
+      </ul>
+      <p><strong>Explanation:</strong> {explanation}</p>
+    </Segment>
+  </Segment.Group>
+);
+
+
 const QuestionsPlaceholder = () => (
   <SegmentGroup style={{ marginBottom: '1em' }}>
     <Segment attached='bottom'>
@@ -49,13 +73,6 @@ const QuestionsPlaceholder = () => (
       </Placeholder>
     </Segment>
   </SegmentGroup>
-)
+);
 
-const SingleQuestion = ({ id, categoryId, text, option1Id, option2Id, option3Id, option4Id, explanation }: Question) => (
-  <Segment.Group key={id}>
-    <Header attached='top' as='h3'>
-      <Link to={`/question/${id}`}>{categoryId}</Link>
-    </Header>
-    <Segment attached='bottom' content={text} />
-  </Segment.Group>
-)
+

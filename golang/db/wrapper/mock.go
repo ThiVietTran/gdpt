@@ -272,19 +272,19 @@ func (mr *MockQuerierMockRecorder) UpdatePost(ctx, arg interface{}) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdatePost", reflect.TypeOf((*MockQuerier)(nil).UpdatePost), ctx, arg)
 }
 
-// UpdateQuestionExplain mocks base method.
-func (m *MockQuerier) UpdateQuestionExplain(ctx context.Context, arg db.UpdateQuestionExplainParams) (db.Question, error) {
+// UpdateQuestion mocks base method.
+func (m *MockQuerier) UpdateQuestion(ctx context.Context, arg db.UpdateQuestionParams) (db.Question, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "UpdateQuestionExplain", ctx, arg)
+	ret := m.ctrl.Call(m, "UpdateQuestion", ctx, arg)
 	ret0, _ := ret[0].(db.Question)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// UpdateQuestionExplain indicates an expected call of UpdateQuestionExplain.
-func (mr *MockQuerierMockRecorder) UpdateQuestionExplain(ctx, arg interface{}) *gomock.Call {
+// UpdateQuestion indicates an expected call of UpdateQuestion.
+func (mr *MockQuerierMockRecorder) UpdateQuestion(ctx, arg interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateQuestionExplain", reflect.TypeOf((*MockQuerier)(nil).UpdateQuestionExplain), ctx, arg)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateQuestion", reflect.TypeOf((*MockQuerier)(nil).UpdateQuestion), ctx, arg)
 }
 
 // UpdateUserPassword mocks base method.

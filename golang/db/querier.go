@@ -25,7 +25,7 @@ type Querier interface {
 	FindUserByID(ctx context.Context, id int64) (User, error)
 	FindUserByVerificationCode(ctx context.Context, verification string) (User, error)
 	UpdatePost(ctx context.Context, arg UpdatePostParams) (Post, error)
-	UpdateQuestionExplain(ctx context.Context, arg UpdateQuestionExplainParams) (Question, error)
+	UpdateQuestion(ctx context.Context, arg UpdateQuestionParams) (Question, error)
 	UpdateUserPassword(ctx context.Context, arg UpdateUserPasswordParams) error
 	UpdateUserStatus(ctx context.Context, arg UpdateUserStatusParams) error
 }

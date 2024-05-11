@@ -21,11 +21,11 @@ const ViewQuestion = () => {
     }
   }, [run, questionID])
 
-  const { id, categoryId, text, option1Id, option2Id, option3Id, option4Id, explanation } = question;
+  const { id, bac_hoc_id, question_text, option1, option2, option3, option4, explanation } = question;
 
   return (
-    <SimplePage icon='file alternate outline' title={categoryId.toString()} loading={loading} error={error}>
-      <p style={{whiteSpace: 'pre'}}>{text}</p>
+    <SimplePage icon='file alternate outline' title={bac_hoc_id.toString()} loading={loading} error={error}>
+      <p style={{whiteSpace: 'pre'}}>{question_text}</p>
       {id && id > 0 && 
         <Button as={Link} to={`/question/${id}/edit`} content='Edit' />}
     </SimplePage>

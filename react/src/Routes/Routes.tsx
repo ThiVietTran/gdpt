@@ -12,9 +12,9 @@ import SignUp from 'Routes/SignUp/SignUp'
 import Verify from 'Routes/Verify/Verify'
 import SWCamera from 'Routes/SWCamera/SWCamera'
 import Questions from "./Questions/Questions";
-import QuestionForm from "./Questions/QuestionForm";
 import ViewQuestion from "./Questions/Question";
 import ViewPost from "Routes/Posts/Post";
+import AddQuestionForm from './Questions/AddQuestionForm';
 
 const Routes = () => (
   <ReactRouterRoutes>
@@ -86,7 +86,7 @@ const Routes = () => (
       path="/question/create"
       element={
         <RequireAuth>
-          <QuestionForm />
+          <AddQuestionForm />
         </RequireAuth>
       }
     />
@@ -94,7 +94,7 @@ const Routes = () => (
       path="/question/:id/edit"
       element={
         <RequireAuth>
-          <QuestionForm />
+          <AddQuestionForm />
         </RequireAuth>
       }
     />
