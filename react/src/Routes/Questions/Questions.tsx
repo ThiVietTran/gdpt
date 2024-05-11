@@ -21,7 +21,7 @@ const Questions = () => {
       {loading && <QuestionsPlaceholder />}
       {questions.length === 0 && !loading && <Message warning>Không tìm thấy câu hỏi nào</Message>}
       {questions.map((question, index) => (
-        <SingleQuestion key={index} {...question} />
+        <SingleQuestion key={index} {...(question as Question)} />
       ))}
       <Button as={Link} to='/question/create' primary icon='plus' content='Thêm câu hỏi' />
     </SimplePage>
@@ -37,28 +37,33 @@ const SingleQuestion: React.FC<Question> = ({
   option3,
   option4,
   explanation,
-}) => (
-  <Segment.Group>
-    <Header attached='top' as='h3'>
-      <Link to={`/question/${id}`}>{bac_hoc_id}</Link>
-    </Header>
-    <Segment attached='bottom'>
-      <p>{question_text}</p>
-      <ul>
-        <li>{option1.option}</li>
-        <li>{option2.option}</li>
-        <li>{option3.option}</li>
-        <li>{option4.option}</li>
-      </ul>
-      {/* Rendering explanation conditionally based on validity */}
-      {explanation && explanation.Valid ? (
-        <p>
-          <strong>Explanation:</strong> {explanation.String}
-        </p>
-      ) : null}
-    </Segment>
-  </Segment.Group>
-);
+}) => {
+
+  //console.log(typeof explanation); // Log the type of explanation
+
+  return (
+    <Segment.Group>
+      <Header attached='top' as='h3'>
+        <Link to={`/question/${id}`}>{bac_hoc_id}</Link>
+      </Header>
+      <Segment attached='bottom'>
+        <p>{question_text}</p>
+        <ul>
+          <li>{option1.option}</li>
+          <li>{option2.option}</li>
+          <li>{option3.option}</li>
+          <li>{option4.option}</li>
+        </ul>
+        {/* Rendering explanation conditionally based on validity */}
+        {explanation && typeof explanation === 'object' && explanation.Valid ? (
+          <p>
+            <strong>Explanation:</strong> {explanation.String}
+          </p>
+        ) : null}
+      </Segment>
+    </Segment.Group>
+  );
+};
 
 const QuestionsPlaceholder = () => (
   <SegmentGroup style={{ marginBottom: '1em' }}>
