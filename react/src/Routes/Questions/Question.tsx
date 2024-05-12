@@ -79,7 +79,7 @@ const ViewQuestion = () => {
         <li>{option3.option}</li>
         <li>{option4.option}</li>
       </ul>
-      <p>{String(typeof explanation === 'object' && explanation.Valid ? explanation.String: explanation)}</p>
+      <p>{explanation}</p>
       {/* Show edit button if question has an ID */}
       {id && id > 0 && (
         <div>

@@ -15,16 +15,19 @@ import Questions from "./Questions/Questions";
 import ViewQuestion from "./Questions/Question";
 import ViewPost from "Routes/Posts/Post";
 import AddQuestionForm from './Questions/AddQuestionForm';
+import EditQuestionForm from './Questions/EditQuestionForm';
+import UnderDevPage from './UnderDevPage/UnderDevPage';
+import PracticeMulChoice from './Questions/PracticeMulChoice';
 
 const Routes = () => (
   <ReactRouterRoutes>
     <Route path="/" element={<Home />} />
-    <Route path="/signup" element={<SignUp />}/>
-    <Route path="/login" element={<LogIn />}/>
-    <Route path="/reset" element={<Reset />}/>
-    <Route path="/reset/:code" element={<CheckReset />}/>
-    <Route path="/verify/:code" element={<Verify />}/>
-    
+    <Route path="/signup" element={<SignUp />} />
+    <Route path="/login" element={<LogIn />} />
+    <Route path="/reset" element={<Reset />} />
+    <Route path="/reset/:code" element={<CheckReset />} />
+    <Route path="/verify/:code" element={<Verify />} />
+
     {/* crud post routes */}
     <Route
       path="/swcamera"
@@ -33,7 +36,7 @@ const Routes = () => (
           <SWCamera />
         </RequireAuth>
       }
-      />
+    />
     <Route
       path="/change-password"
       element={
@@ -41,7 +44,7 @@ const Routes = () => (
           <ChangePassword />
         </RequireAuth>
       }
-      />
+    />
     <Route
       path="/posts"
       element={
@@ -94,7 +97,7 @@ const Routes = () => (
       path="/question/:id/edit"
       element={
         <RequireAuth>
-          <AddQuestionForm />
+          <EditQuestionForm />
         </RequireAuth>
       }
     />
@@ -103,6 +106,23 @@ const Routes = () => (
       element={
         <RequireAuth>
           <ViewQuestion />
+        </RequireAuth>
+      }
+    />
+
+    <Route
+      path="/underdevpage"
+      element={
+        <RequireAuth>
+          <UnderDevPage />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/practicemulchoice"
+      element={
+        <RequireAuth>
+          <PracticeMulChoice />
         </RequireAuth>
       }
     />

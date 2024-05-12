@@ -27,6 +27,11 @@ const Nav = () => {
         <Menu.Item as={NavLink} to="/" name="Home" />
         <LoggedIn>
           <Menu.Item as={NavLink} to="/questions" name="Questions" />
+          <Menu.Item as={NavLink} to="/practicemulchoice" name="Trắc nghiệm" />
+          <Menu.Item as={NavLink} to="/underdevpage" name="Sách tịch" />
+          <Menu.Item as={NavLink} to="/underdevpage" name="Bậc học" />
+          <Menu.Item as={NavLink} to="/underdevpage" name="Trại" />
+          <Menu.Item as={NavLink} to="/underdevpage" name="Văn bản" />
         </LoggedIn>
       </Menu.Menu>
       <Menu.Menu className={menuClass} position="right">

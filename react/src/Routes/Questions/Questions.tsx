@@ -55,9 +55,9 @@ const SingleQuestion: React.FC<Question> = ({
           <li>{option4.option}</li>
         </ul>
         {/* Rendering explanation conditionally based on validity */}
-        {explanation && typeof explanation === 'object' && explanation.Valid ? (
+        {explanation ? (
           <p>
-            <strong>Explanation:</strong> {explanation.String}
+            <strong>Explanation:</strong> {explanation}
           </p>
         ) : null}
       </Segment>
