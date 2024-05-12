@@ -5,7 +5,6 @@
 package db
 
 import (
-	"database/sql"
 	"database/sql/driver"
 	"fmt"
 	"time"
@@ -103,12 +102,6 @@ type BacHoc struct {
 	Name string `json:"name"`
 }
 
-type Option struct {
-	ID       int32        `json:"id"`
-	Text     string       `json:"text"`
-	IsAnswer sql.NullBool `json:"is_answer"`
-}
-
 type Post struct {
 	ID        int64      `json:"id"`
 	AuthorID  int64      `json:"author_id"`
@@ -120,14 +113,14 @@ type Post struct {
 }
 
 type Question struct {
-	ID           int64          `json:"id"`
-	BacHocID     string         `json:"bac_hoc_id"`
-	QuestionText string         `json:"question_text"`
-	Explanation  sql.NullString `json:"explanation"`
-	Option1      pgtype.JSONB   `json:"option1"`
-	Option2      pgtype.JSONB   `json:"option2"`
-	Option3      pgtype.JSONB   `json:"option3"`
-	Option4      pgtype.JSONB   `json:"option4"`
+	ID           int64        `json:"id"`
+	BacHocID     string       `json:"bac_hoc_id"`
+	QuestionText string       `json:"question_text"`
+	Explanation  string       `json:"explanation"`
+	Option1      pgtype.JSONB `json:"option1"`
+	Option2      pgtype.JSONB `json:"option2"`
+	Option3      pgtype.JSONB `json:"option3"`
+	Option4      pgtype.JSONB `json:"option4"`
 }
 
 type Reset struct {

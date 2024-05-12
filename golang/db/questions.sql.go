@@ -7,7 +7,6 @@ package db
 
 import (
 	"context"
-	"database/sql"
 
 	"github.com/jackc/pgtype"
 )
@@ -18,13 +17,13 @@ INSERT INTO questions (bac_hoc_id, question_text, option1, option2, option3, opt
 `
 
 type CreateQuestionParams struct {
-	BacHocID     string         `json:"bac_hoc_id"`
-	QuestionText string         `json:"question_text"`
-	Option1      pgtype.JSONB   `json:"option1"`
-	Option2      pgtype.JSONB   `json:"option2"`
-	Option3      pgtype.JSONB   `json:"option3"`
-	Option4      pgtype.JSONB   `json:"option4"`
-	Explanation  sql.NullString `json:"explanation"`
+	BacHocID     string       `json:"bac_hoc_id"`
+	QuestionText string       `json:"question_text"`
+	Option1      pgtype.JSONB `json:"option1"`
+	Option2      pgtype.JSONB `json:"option2"`
+	Option3      pgtype.JSONB `json:"option3"`
+	Option4      pgtype.JSONB `json:"option4"`
+	Explanation  string       `json:"explanation"`
 }
 
 func (q *Queries) CreateQuestion(ctx context.Context, arg CreateQuestionParams) (Question, error) {
@@ -128,14 +127,14 @@ RETURNING id, bac_hoc_id, question_text, explanation, option1, option2, option3,
 `
 
 type UpdateQuestionParams struct {
-	BacHocID     string         `json:"bac_hoc_id"`
-	QuestionText string         `json:"question_text"`
-	Option1      pgtype.JSONB   `json:"option1"`
-	Option2      pgtype.JSONB   `json:"option2"`
-	Option3      pgtype.JSONB   `json:"option3"`
-	Option4      pgtype.JSONB   `json:"option4"`
-	Explanation  sql.NullString `json:"explanation"`
-	ID           int64          `json:"id"`
+	BacHocID     string       `json:"bac_hoc_id"`
+	QuestionText string       `json:"question_text"`
+	Option1      pgtype.JSONB `json:"option1"`
+	Option2      pgtype.JSONB `json:"option2"`
+	Option3      pgtype.JSONB `json:"option3"`
+	Option4      pgtype.JSONB `json:"option4"`
+	Explanation  string       `json:"explanation"`
+	ID           int64        `json:"id"`
 }
 
 func (q *Queries) UpdateQuestion(ctx context.Context, arg UpdateQuestionParams) (Question, error) {

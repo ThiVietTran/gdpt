@@ -1,6 +1,0 @@
-CREATE SCHEMA options;
-CREATE TABLE options (
-    id SERIAL PRIMARY KEY,
-    text TEXT NOT NULL,
-    is_answer BOOLEAN DEFAULT FALSE
-);
