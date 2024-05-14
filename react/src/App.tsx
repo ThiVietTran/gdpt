@@ -17,8 +17,10 @@ const App = () => (
     </Helmet>
     <Router>
       <div id="wrapper">
-        <Nav />
-        <Routes />
+      <div style={{ height: "100vh", display: "flex" }}>
+          <Nav />
+          <Routes />
+        </div>
       </div>
     </Router>
   </WithUser>
