@@ -17,3 +17,52 @@
     display: none;
   }
 }
+
+.button-link {
+  display: inline-block;
+  position: relative;
+  padding: 10px 50px;
+  text-decoration: none;
+  margin-left: -1.30cm;
+  color: inherit;
+}
+.button-link:hover {
+  text-decoration: none;
+}
+
+
+/* responsive.css */
+/* You can adjust these styles as needed */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: calc(15vh - 3cm); /* Adjusted width */
+  background-color: #ffffff; /* Sidebar background color */
+  color: #607489; /* Sidebar text color */
+}
+
+.menu {
+  font-size: 20px; /* Increased font size */
+}
+
+.menu-item {
+  padding: 10px; /* Adjust the padding as needed */
+}
+
+.menu-item .button-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-item .button-link:hover {
+  color: #0098e5; /* Hover color */
+}
+
+.menu-item.active {
+  background-color: #c5e4ff; /* Active menu item background color */
+  color: #44596e; /* Active menu item text color */
+}
+
+
