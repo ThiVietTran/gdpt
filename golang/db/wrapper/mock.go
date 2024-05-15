@@ -50,6 +50,21 @@ func (mr *MockQuerierMockRecorder) CreateBacHoc(ctx, arg interface{}) *gomock.Ca
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateBacHoc", reflect.TypeOf((*MockQuerier)(nil).CreateBacHoc), ctx, arg)
 }
 
+// CreateBhd mocks base method.
+func (m *MockQuerier) CreateBhd(ctx context.Context, arg db.CreateBhdParams) (db.Bhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateBhd", ctx, arg)
+	ret0, _ := ret[0].(db.Bhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateBhd indicates an expected call of CreateBhd.
+func (mr *MockQuerierMockRecorder) CreateBhd(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateBhd", reflect.TypeOf((*MockQuerier)(nil).CreateBhd), ctx, arg)
+}
+
 // CreatePost mocks base method.
 func (m *MockQuerier) CreatePost(ctx context.Context, arg db.CreatePostParams) (db.Post, error) {
 	m.ctrl.T.Helper()
@@ -122,6 +137,20 @@ func (m *MockQuerier) DeleteBacHocByIDs(ctx context.Context, id string) error {
 func (mr *MockQuerierMockRecorder) DeleteBacHocByIDs(ctx, id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteBacHocByIDs", reflect.TypeOf((*MockQuerier)(nil).DeleteBacHocByIDs), ctx, id)
+}
+
+// DeleteBhdByIDs mocks base method.
+func (m *MockQuerier) DeleteBhdByIDs(ctx context.Context, id string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteBhdByIDs", ctx, id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteBhdByIDs indicates an expected call of DeleteBhdByIDs.
+func (mr *MockQuerierMockRecorder) DeleteBhdByIDs(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteBhdByIDs", reflect.TypeOf((*MockQuerier)(nil).DeleteBhdByIDs), ctx, id)
 }
 
 // DeletePostByIDs mocks base method.
@@ -209,6 +238,36 @@ func (m *MockQuerier) FindBacHocByIDs(ctx context.Context, id string) (db.BacHoc
 func (mr *MockQuerierMockRecorder) FindBacHocByIDs(ctx, id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindBacHocByIDs", reflect.TypeOf((*MockQuerier)(nil).FindBacHocByIDs), ctx, id)
+}
+
+// FindBhd mocks base method.
+func (m *MockQuerier) FindBhd(ctx context.Context) ([]db.Bhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindBhd", ctx)
+	ret0, _ := ret[0].([]db.Bhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindBhd indicates an expected call of FindBhd.
+func (mr *MockQuerierMockRecorder) FindBhd(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindBhd", reflect.TypeOf((*MockQuerier)(nil).FindBhd), ctx)
+}
+
+// FindBhdByIDs mocks base method.
+func (m *MockQuerier) FindBhdByIDs(ctx context.Context, id string) (db.Bhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindBhdByIDs", ctx, id)
+	ret0, _ := ret[0].(db.Bhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindBhdByIDs indicates an expected call of FindBhdByIDs.
+func (mr *MockQuerierMockRecorder) FindBhdByIDs(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindBhdByIDs", reflect.TypeOf((*MockQuerier)(nil).FindBhdByIDs), ctx, id)
 }
 
 // FindPostByIDs mocks base method.
@@ -329,6 +388,21 @@ func (m *MockQuerier) UpdateBacHoc(ctx context.Context, arg db.UpdateBacHocParam
 func (mr *MockQuerierMockRecorder) UpdateBacHoc(ctx, arg interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateBacHoc", reflect.TypeOf((*MockQuerier)(nil).UpdateBacHoc), ctx, arg)
+}
+
+// UpdateBhd mocks base method.
+func (m *MockQuerier) UpdateBhd(ctx context.Context, arg db.UpdateBhdParams) (db.Bhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateBhd", ctx, arg)
+	ret0, _ := ret[0].(db.Bhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateBhd indicates an expected call of UpdateBhd.
+func (mr *MockQuerierMockRecorder) UpdateBhd(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateBhd", reflect.TypeOf((*MockQuerier)(nil).UpdateBhd), ctx, arg)
 }
 
 // UpdatePost mocks base method.

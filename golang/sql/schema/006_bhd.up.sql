@@ -1,0 +1,6 @@
+CREATE SCHEMA bhd;
+
+CREATE TABLE bhd (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL
+);

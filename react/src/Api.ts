@@ -1,4 +1,4 @@
-import { Post, Question, User } from "Shared/Models"
+import { BacHoc, Post, Question, User } from "Shared/Models"
 
 export default class API {
   // SESSION
@@ -68,6 +68,23 @@ export default class API {
   )
   static deleteQuestion = (id: number) => (
     _delete(`/question/${id}`)
+  )
+
+  // BAC HOC
+  static getBacHocs = () => (
+    _get('/bachoc')
+  )
+  static getBacHoc = (id: string) => (
+    _get(`/bachoc/${id}`)
+  )
+  static createBacHoc = (body: BacHoc) => (
+    _post('/bachoc', body)
+  )
+  static updateBacHoc = (body: BacHoc) => (
+    _put('/bachoc', body)
+  )
+  static deleteBacHoc = (id: string) => (
+    _delete(`/bachoc/${id}`)
   )
 }
 

@@ -1,2 +1,2 @@
-DROP SCHEMA categories;
-DROP TABLE IF EXISTS categories;
+DROP SCHEMA bac_hoc;
+DROP TABLE IF EXISTS bac_hoc;

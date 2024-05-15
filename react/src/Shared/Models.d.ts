@@ -33,3 +33,9 @@ export type Question = {
   }
 }
 
+export type BacHoc = {
+  id: string,
+  name: string
+}
+
+

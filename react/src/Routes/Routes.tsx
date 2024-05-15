@@ -18,6 +18,9 @@ import AddQuestionForm from './Questions/AddQuestionForm';
 import EditQuestionForm from './Questions/EditQuestionForm';
 import UnderDevPage from './UnderDevPage/UnderDevPage';
 import PracticeMulChoice from './Questions/PracticeMulChoice';
+import Bac_Hoc from './BacHoc/BacHoc';
+import BacHocs from './BacHoc/BacHocs';
+import BacHocForm from './BacHoc/BacHocForm';
 
 const Routes = () => (
   <ReactRouterRoutes>
@@ -126,6 +129,40 @@ const Routes = () => (
         </RequireAuth>
       }
     />
+
+    <Route
+      path="/bac_hocs"
+      element={
+        <RequireAuth>
+          <BacHocs />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/bac_hoc/create"
+      element={
+        <RequireAuth>
+          <BacHocForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/bac_hoc/:id/edit"
+      element={
+        <RequireAuth>
+          <BacHocForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/bac_hoc/:id"
+      element={
+        <RequireAuth>
+          <Bac_Hoc />
+        </RequireAuth>
+      }
+    />
+
     <Route element={<NoMatch />} />
   </ReactRouterRoutes>
 )

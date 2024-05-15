@@ -37,9 +37,9 @@ const Nav = () => {
       >
         <MenuItem component={<Link to="/" />}> Home</MenuItem>
         <LoggedIn>
-          <MenuItem component={<Link to="/questions" />}> Documentation</MenuItem>
-          <MenuItem component={<Link to="/underdevpage" />}> Calendar</MenuItem>
-          <MenuItem component={<Link to="/underdevpage" />}> E-commerce</MenuItem>
+          <MenuItem component={<Link to="/questions" />}> Questions</MenuItem>
+          <MenuItem component={<Link to="/bac_hocs" />}> Bac Hoc</MenuItem>
+          <MenuItem component={<Link to="/underdevpage" />}> Under dev</MenuItem>
         </LoggedIn>
         <Anon>
           <MenuItem component={<Link to="/login" />}> Login</MenuItem>
