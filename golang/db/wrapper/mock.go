@@ -35,6 +35,21 @@ func (m *MockQuerier) EXPECT() *MockQuerierMockRecorder {
 	return m.recorder
 }
 
+// CreateBacHoc mocks base method.
+func (m *MockQuerier) CreateBacHoc(ctx context.Context, arg db.CreateBacHocParams) (db.BacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateBacHoc", ctx, arg)
+	ret0, _ := ret[0].(db.BacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateBacHoc indicates an expected call of CreateBacHoc.
+func (mr *MockQuerierMockRecorder) CreateBacHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateBacHoc", reflect.TypeOf((*MockQuerier)(nil).CreateBacHoc), ctx, arg)
+}
+
 // CreatePost mocks base method.
 func (m *MockQuerier) CreatePost(ctx context.Context, arg db.CreatePostParams) (db.Post, error) {
 	m.ctrl.T.Helper()
@@ -95,6 +110,20 @@ func (mr *MockQuerierMockRecorder) CreateUser(ctx, arg interface{}) *gomock.Call
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateUser", reflect.TypeOf((*MockQuerier)(nil).CreateUser), ctx, arg)
 }
 
+// DeleteBacHocByIDs mocks base method.
+func (m *MockQuerier) DeleteBacHocByIDs(ctx context.Context, id string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteBacHocByIDs", ctx, id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteBacHocByIDs indicates an expected call of DeleteBacHocByIDs.
+func (mr *MockQuerierMockRecorder) DeleteBacHocByIDs(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteBacHocByIDs", reflect.TypeOf((*MockQuerier)(nil).DeleteBacHocByIDs), ctx, id)
+}
+
 // DeletePostByIDs mocks base method.
 func (m *MockQuerier) DeletePostByIDs(ctx context.Context, arg db.DeletePostByIDsParams) error {
 	m.ctrl.T.Helper()
@@ -150,6 +179,36 @@ func (m *MockQuerier) FindAllQuestions(ctx context.Context) ([]db.Question, erro
 func (mr *MockQuerierMockRecorder) FindAllQuestions(ctx interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllQuestions", reflect.TypeOf((*MockQuerier)(nil).FindAllQuestions), ctx)
+}
+
+// FindBacHoc mocks base method.
+func (m *MockQuerier) FindBacHoc(ctx context.Context) ([]db.BacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindBacHoc", ctx)
+	ret0, _ := ret[0].([]db.BacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindBacHoc indicates an expected call of FindBacHoc.
+func (mr *MockQuerierMockRecorder) FindBacHoc(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindBacHoc", reflect.TypeOf((*MockQuerier)(nil).FindBacHoc), ctx)
+}
+
+// FindBacHocByIDs mocks base method.
+func (m *MockQuerier) FindBacHocByIDs(ctx context.Context, id string) (db.BacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindBacHocByIDs", ctx, id)
+	ret0, _ := ret[0].(db.BacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindBacHocByIDs indicates an expected call of FindBacHocByIDs.
+func (mr *MockQuerierMockRecorder) FindBacHocByIDs(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindBacHocByIDs", reflect.TypeOf((*MockQuerier)(nil).FindBacHocByIDs), ctx, id)
 }
 
 // FindPostByIDs mocks base method.
@@ -255,6 +314,21 @@ func (m *MockQuerier) FindUserByVerificationCode(ctx context.Context, verificati
 func (mr *MockQuerierMockRecorder) FindUserByVerificationCode(ctx, verification interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindUserByVerificationCode", reflect.TypeOf((*MockQuerier)(nil).FindUserByVerificationCode), ctx, verification)
+}
+
+// UpdateBacHoc mocks base method.
+func (m *MockQuerier) UpdateBacHoc(ctx context.Context, arg db.UpdateBacHocParams) (db.BacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateBacHoc", ctx, arg)
+	ret0, _ := ret[0].(db.BacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateBacHoc indicates an expected call of UpdateBacHoc.
+func (mr *MockQuerierMockRecorder) UpdateBacHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateBacHoc", reflect.TypeOf((*MockQuerier)(nil).UpdateBacHoc), ctx, arg)
 }
 
 // UpdatePost mocks base method.

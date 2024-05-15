@@ -47,7 +47,7 @@ func (srv *server) ConfigureRouter() {
 	srv.DELETE("/post/:id", handlers.DeletePost)
 
 	//CAMERA
-	srv.POST("/camera", handlers.CameraCommand)
+	// srv.POST("/camera", handlers.CameraCommand)
 
 	//TRACNGHIEM
 	srv.GET("/question", handlers.GetQuestions)
