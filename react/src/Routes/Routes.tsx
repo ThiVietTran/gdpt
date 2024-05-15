@@ -21,6 +21,9 @@ import PracticeMulChoice from './Questions/PracticeMulChoice';
 import Bac_Hoc from './BacHoc/BacHoc';
 import BacHocs from './BacHoc/BacHocs';
 import BacHocForm from './BacHoc/BacHocForm';
+import BHD from "./BHD/BHD";
+import BHDForm from "./BHD/BHDForm";
+import BHDs from "./BHD/BHDs";
 
 const Routes = () => (
   <ReactRouterRoutes>
@@ -159,6 +162,39 @@ const Routes = () => (
       element={
         <RequireAuth>
           <Bac_Hoc />
+        </RequireAuth>
+      }
+    />
+
+    <Route
+      path="/bhds"
+      element={
+        <RequireAuth>
+          <BHDs />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/bhd/create"
+      element={
+        <RequireAuth>
+          <BHDForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/bhd/:id/edit"
+      element={
+        <RequireAuth>
+          <BHDForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/bhd/:id"
+      element={
+        <RequireAuth>
+          <BHD />
         </RequireAuth>
       }
     />

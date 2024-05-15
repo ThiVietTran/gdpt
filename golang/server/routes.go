@@ -62,6 +62,13 @@ func (srv *server) ConfigureRouter() {
 	srv.POST("/bachoc", handlers.CreateBacHoc)
 	srv.PUT("/bachoc", handlers.UpdateBacHoc)
 	srv.DELETE("/bachoc/:id", handlers.DeleteBacHoc)
+
+	// BHD
+	srv.GET("/bhd", handlers.GetBHDs)
+	srv.GET("/bhd/:id", handlers.GetBHD)
+	srv.POST("/bhd", handlers.CreateBHD)
+	srv.PUT("/bhd", handlers.UpdateBHD)
+	srv.DELETE("/bhd/:id", handlers.DeleteBHD)
 }
 
 // srvHandler is the extended handler function that our API routes use

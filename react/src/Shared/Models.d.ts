@@ -38,4 +38,9 @@ export type BacHoc = {
   name: string
 }
 
+export type Bhd = {
+  id: string,
+  name: string
+}
+
 
