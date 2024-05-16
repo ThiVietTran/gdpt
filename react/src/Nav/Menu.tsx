@@ -1,8 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import { StyledUl } from '../styles/StyledUl';
+import { StyledUl } from './StyledUl';
 import styled, { CSSObject } from '@emotion/styled';
-import { menuClasses } from '../utils/utilityClasses';
+import { menuClasses } from './utilityClasses';
 
 export interface MenuItemStylesParams {
   level: number;

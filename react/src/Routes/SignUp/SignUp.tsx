@@ -6,9 +6,11 @@ import { Segment } from 'semantic-ui-react'
 import SimplePage from 'Shared/SimplePage';
 
 import SignUpForm from './SignUpForm'
-
+import {Image} from 'semantic-ui-react'
 const SignUp = () => (
-  <SimplePage centered title='Create a new account'>
+  <SimplePage centered title=''>
+    <Image src='./icon/logo.png' avatar size='small'/>
+    <h1> Tạo Tài Khoản </h1>
     <Segment.Group>
       <Segment>
         <SignUpForm/>

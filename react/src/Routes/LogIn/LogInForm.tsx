@@ -50,7 +50,7 @@ const LogInForm = () => {
         placeholder="Password"
         required
         onChange={handleChange} />
-      <Button primary fluid size="huge" type="submit">Log In</Button>
+      <Button positive color='greend' primary fluid size="huge" type="submit"> Đăng Nhập </Button>
     </Form>
   )
 }

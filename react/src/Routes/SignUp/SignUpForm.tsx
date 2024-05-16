@@ -40,7 +40,7 @@ const SignUpForm = () => {
         required
         value={pass}
         onChange={handleChange} />
-      <Button positive fluid size="huge" type="submit">Create Account</Button>
+      <Button positive fluid size="huge" type="submit"> Đăng Ký </Button>
     </Form>
   )
 }
