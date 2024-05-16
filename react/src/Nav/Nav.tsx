@@ -6,9 +6,9 @@ import { Anon, LoggedIn } from 'Shared/Roles';
 import { UserContainer } from 'Shared/UserContainer';
 import './responsive.css';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import { menuClasses } from 'src2/src';
-import { MenuItemStyles } from 'src2/src';
-import { Switch } from 'src2/storybook/components/Switch';
+import { menuClasses } from './utilityClasses';
+import { MenuItemStyles } from './Menu';
+import { Switch } from 'Nav/Switch';
 
 type Theme = 'light' | 'dark';
 
