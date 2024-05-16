@@ -11,3 +11,8 @@ export const Anon = ({ children }: { children: React.ReactNode }) => {
   const { user } = useContext(UserContainer)
   return <>{(user.id === 0 || !user.id) && children}</>
 }
+
+export const TAnon = ({ children }: { children: React.ReactNode }) => {
+  const { user } = useContext(UserContainer)
+  return <>{(user.id !== 0 && user.id) && children}</>
+}

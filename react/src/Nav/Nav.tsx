@@ -137,7 +137,7 @@ const Nav = () => {
         <div style={{ flex: 1, marginBottom: '32px' }}>
           <Menu menuItemStyles={menuItemStyles} >
             <div style={{ marginTop: '0.5cm' }}>
-              <Image src='./icon/logohead.png' centered size='medium' />
+              <Image src='../icon/logohead.png' centered size='medium' />
             </div>
             <MenuItem>
             </MenuItem>
@@ -185,14 +185,7 @@ const Nav = () => {
             </LoggedIn>
           </Menu>
           <Menu menuItemStyles={menuItemStyles}>
-            <Anon>
-              <MenuItem>
-                <NavLink to={{ pathname: "/login" }} className="button-link"><Icon name='hand point right outline' size='large' />Log In</NavLink>
-              </MenuItem>
-              <MenuItem>
-                <NavLink to="/signup" className="button-link"><Icon name='hand point right outline' size='large' />Sign Up</NavLink>
-              </MenuItem>
-            </Anon>
+            
             <Menu>
               <LoggedIn>
                 <Menu menuItemStyles={menuItemStyles}>
