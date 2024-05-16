@@ -1,23 +1,3 @@
-[
-    {
-        "id": 2,
-        "author_id": 1,
-        "title": "who rew",
-        "body": "dsa jlof",
-        "status": "published",
-        "created_at": "2024-05-10T12:27:34.672582Z",
-        "updated_at": "2024-05-10T12:27:34.672582Z"
-    },
-    {
-        "id": 1,
-        "author_id": 1,
-        "title": "test",
-        "body": "teest te",
-        "status": "published",
-        "created_at": "2024-05-10T12:27:23.23769Z",
-        "updated_at": "2024-05-10T12:27:23.23769Z"
-    }
-]
 
 
 #! /bin/bash
@@ -34,63 +14,17 @@ cat tracnghiem_backup.sql | sudo docker exec -i ad0ec138493b psql -U huyanh -d t
 sudo docker exec -i ad0ec138493b psql -U huyanh -d tracnghiem < tracnghiem_backup.sql
 
 
--- name: FindAllQuestions :many
-SELECT q.id, q.text, q.explanation, c.id, c.name, o1.id, o1.text, o1.is_answer, o2.id, o2.text, o2.is_answer, o3.id, o3.text, o3.is_answer, o4.id, o4.text, o4.is_answer 
-FROM questions q INNER JOIN options o1 ON q.option1id = o1.id INNER JOIN options o2 ON q.option2id = o2.id INNER JOIN options o3 ON q.option3id = o3.id INNER JOIN options o4 ON q.option4id = o4.id INNER JOIN categories c ON q.categoryid = c.id ORDER BY q.id;
-
 
 sqlc generate
 
-[
-    {
-        "id": 1,
-        "bac_hoc_id": "luc3",
-        "question_text": "Đức Phật chỉ dạy trong Kinh Duy Ma Cật, Bồ tát hành đạo để tịnh Phật quốc độ vì biết rằng tất cả các pháp bản lai thanh tịnh. Đó là:",
-        "explanation": {
-            "String": "Chưa có lời giải thích",
-            "Valid": true
-        },
-        "option1": {
-            "option": "Đại bi ",
-            "is_answer": false
-        },
-        "option2": {
-            "option": "Đại hạnh",
-            "is_answer": false
-        },
-        "option3": {
-            "option": "Đại nguyện",
-            "is_answer": false
-        },
-        "option4": {
-            "option": "Đại trí",
-            "is_answer": true
-        }
-    },
-    {
-        "id": 2,
-        "bac_hoc_id": "luc3",
-        "question_text": "Theo tinh thần Kinh Duy Ma Cật, Phật quốc ở đây được hiểu như thế nào?",
-        "explanation": {
-            "String": "Chưa có lời giải thích",
-            "Valid": true
-        },
-        "option1": {
-            "option": "Là phạm vi mà trong đó giáo pháp của Phật được lưu truyền",
-            "is_answer": false
-        },
-        "option2": {
-            "option": "Đó là môi trường chịu ảnh hưởng giáo hoá của một đức Phật nhất định trong một thời gian nhất định",
-            "is_answer": false
-        },
-        "option3": {
-            "option": "Đó là thế giới của Phật ",
-            "is_answer": false
-        },
-        "option4": {
-            "option": "Tất cả đều đúng",
-            "is_answer": true
-        }
-    }
-]
-   
+
+
+git them file len sever 
+
+git add .
+git commit -m "ghi note vaof "
+git push
+
+git keo file ve
+
+git pull
