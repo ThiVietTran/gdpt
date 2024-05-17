@@ -1,7 +1,8 @@
 CREATE SCHEMA bac_hoc;
 
 CREATE TABLE bac_hoc (
-    id TEXT PRIMARY KEY,
+    id TEXT NOT NULL,
     name TEXT NOT NULL,
-    UNIQUE(name)
+    CONSTRAINT bac_hoc_pkey PRIMARY KEY (id),
+    CONSTRAINT bac_hoc_name_key UNIQUE (name)
 );

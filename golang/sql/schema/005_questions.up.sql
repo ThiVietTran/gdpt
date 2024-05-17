@@ -9,5 +9,6 @@ CREATE TABLE questions (
     option2 JSONB NOT NULL,
     option3 JSONB NOT NULL,
     option4 JSONB NOT NULL,
-    FOREIGN KEY (bac_hoc_id) REFERENCES bac_hoc(id)
+    CONSTRAINT questions_bac_hoc_id_fkey FOREIGN KEY (bac_hoc_id) REFERENCES bac_hoc(id)
 );
+

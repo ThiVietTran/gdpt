@@ -107,6 +107,15 @@ type Bhd struct {
 	Name string `json:"name"`
 }
 
+type Nienkhoabachoc struct {
+	BachocID  string `json:"bachoc_id"`
+	BhdID     string `json:"bhd_id"`
+	Year      int32  `json:"year"`
+	GiaoTrinh string `json:"giao_trinh"`
+	GiaoTho   string `json:"giao_tho"`
+	Bqt       string `json:"bqt"`
+}
+
 type Post struct {
 	ID        int64      `json:"id"`
 	AuthorID  int64      `json:"author_id"`
