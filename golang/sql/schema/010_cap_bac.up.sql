@@ -1,0 +1,6 @@
+CREATE SCHEMA cap_bac;
+
+CREATE TABLE cap_bac (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL
+);
