@@ -24,6 +24,9 @@ import BacHocForm from './BacHoc/BacHocForm';
 import BHD from "./BHD/BHD";
 import BHDForm from "./BHD/BHDForm";
 import BHDs from "./BHD/BHDs";
+import DONVIs from "./DonVi/DonVis";
+import DonViForm from "./DonVi/DonViForm";
+import DONVI from "./DonVi/DonVi";
 
 const Routes = () => (
   <ReactRouterRoutes>
@@ -195,6 +198,39 @@ const Routes = () => (
       element={
         <RequireAuth>
           <BHD />
+        </RequireAuth>
+      }
+    />
+
+    <Route
+      path="/don_vis"
+      element={
+        <RequireAuth>
+          <DONVIs />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/don_vi/create"
+      element={
+        <RequireAuth>
+          <DonViForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/don_vi/:id/edit"
+      element={
+        <RequireAuth>
+          <DonViForm />
+        </RequireAuth>
+      }
+    />
+    <Route
+      path="/don_vi/:id"
+      element={
+        <RequireAuth>
+          <DONVI />
         </RequireAuth>
       }
     />

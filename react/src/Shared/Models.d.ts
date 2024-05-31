@@ -43,4 +43,8 @@ export type Bhd = {
   name: string
 }
 
-
+export type Don_vi = {
+  id: string,
+  bhd_id: string,
+  name: name
+}

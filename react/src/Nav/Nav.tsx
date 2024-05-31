@@ -173,6 +173,12 @@ const Nav = () => {
                 <MenuItem>
                   <NavLink to="/underdevpage" className="button-link">Sách tịch Huynh Trưởng</NavLink>
                 </MenuItem>
+                <MenuItem>
+                  <NavLink to="/don_vis" className="button-link">Đơn vị</NavLink>
+                </MenuItem>
+                <MenuItem>
+                  <NavLink to="/bhds" className="button-link">Ban Hướng Dẫn</NavLink>
+                </MenuItem>
               </SubMenu>
               <SubMenu label={<span><Icon name='archive' size='large' /> Thư Ký </span>}>
                 <MenuItem>

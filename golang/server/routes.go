@@ -69,6 +69,20 @@ func (srv *server) ConfigureRouter() {
 	srv.POST("/bhd", handlers.CreateBHD)
 	srv.PUT("/bhd", handlers.UpdateBHD)
 	srv.DELETE("/bhd/:id", handlers.DeleteBHD)
+
+	// HUYNH TRUONG
+	srv.GET("/huynhtruong", handlers.GetHuynhTruongs)
+	srv.GET("/huynhtruong/:id", handlers.GetHuynhTruong)
+	srv.POST("/huynhtruong", handlers.CreateHuynhTruong)
+	srv.PUT("/huynhtruong", handlers.UpdateHuynhTruong)
+	srv.DELETE("/huynhtruong/:id", handlers.DeleteHuynhTruong)
+
+	// DON VI
+	srv.GET("/don_vis", handlers.GetDonVis)
+	srv.GET("/don_vi/:id", handlers.GetDonVi)
+	srv.POST("/don_vi", handlers.CreateDonVi)
+	srv.PUT("/don_vi", handlers.UpdateDonVi)
+	srv.DELETE("/don_vi/:id", handlers.DeleteDonVi)
 }
 
 // srvHandler is the extended handler function that our API routes use

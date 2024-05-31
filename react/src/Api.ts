@@ -1,4 +1,4 @@
-import { BacHoc, Bhd, Post, Question, User } from "Shared/Models"
+import { BacHoc, Bhd, Don_vi, Post, Question, User } from "Shared/Models"
 
 export default class API {
   // SESSION
@@ -102,6 +102,23 @@ export default class API {
   )
   static deleteBhd = (id: string) => (
     _delete(`/bhd/${id}`)
+  )
+
+  // DonVi
+  static getDonVis = () => (
+    _get('/don_vis')
+  )
+  static getDonVi = (id: string) => (
+    _get(`/don_vi/${id}`)
+  )
+  static createDonVi = (body: Don_vi) => (
+    _post('/don_vi', body)
+  )
+  static updateDonVi = (body: Don_vi) => (
+    _put('/don_vi', body)
+  )
+  static deleteDonVi = (id: string) => (
+    _delete(`/don_vi/${id}`)
   )
 }
 

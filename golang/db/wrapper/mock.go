@@ -65,6 +65,186 @@ func (mr *MockQuerierMockRecorder) CreateBhd(ctx, arg interface{}) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateBhd", reflect.TypeOf((*MockQuerier)(nil).CreateBhd), ctx, arg)
 }
 
+// CreateCapBac mocks base method.
+func (m *MockQuerier) CreateCapBac(ctx context.Context, arg db.CreateCapBacParams) (db.CapBac, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateCapBac", ctx, arg)
+	ret0, _ := ret[0].(db.CapBac)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateCapBac indicates an expected call of CreateCapBac.
+func (mr *MockQuerierMockRecorder) CreateCapBac(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateCapBac", reflect.TypeOf((*MockQuerier)(nil).CreateCapBac), ctx, arg)
+}
+
+// CreateDamNhiemCVBHD mocks base method.
+func (m *MockQuerier) CreateDamNhiemCVBHD(ctx context.Context, arg db.CreateDamNhiemCVBHDParams) (db.DamNhiemCvBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateDamNhiemCVBHD", ctx, arg)
+	ret0, _ := ret[0].(db.DamNhiemCvBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateDamNhiemCVBHD indicates an expected call of CreateDamNhiemCVBHD.
+func (mr *MockQuerierMockRecorder) CreateDamNhiemCVBHD(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateDamNhiemCVBHD", reflect.TypeOf((*MockQuerier)(nil).CreateDamNhiemCVBHD), ctx, arg)
+}
+
+// CreateDamNhiemCVDV mocks base method.
+func (m *MockQuerier) CreateDamNhiemCVDV(ctx context.Context, arg db.CreateDamNhiemCVDVParams) (db.DamNhiemCvDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateDamNhiemCVDV", ctx, arg)
+	ret0, _ := ret[0].(db.DamNhiemCvDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateDamNhiemCVDV indicates an expected call of CreateDamNhiemCVDV.
+func (mr *MockQuerierMockRecorder) CreateDamNhiemCVDV(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateDamNhiemCVDV", reflect.TypeOf((*MockQuerier)(nil).CreateDamNhiemCVDV), ctx, arg)
+}
+
+// CreateDonVi mocks base method.
+func (m *MockQuerier) CreateDonVi(ctx context.Context, arg db.CreateDonViParams) (db.DonVi, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateDonVi", ctx, arg)
+	ret0, _ := ret[0].(db.DonVi)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateDonVi indicates an expected call of CreateDonVi.
+func (mr *MockQuerierMockRecorder) CreateDonVi(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateDonVi", reflect.TypeOf((*MockQuerier)(nil).CreateDonVi), ctx, arg)
+}
+
+// CreateDongGopBHD mocks base method.
+func (m *MockQuerier) CreateDongGopBHD(ctx context.Context, arg db.CreateDongGopBHDParams) (db.DongGopBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateDongGopBHD", ctx, arg)
+	ret0, _ := ret[0].(db.DongGopBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateDongGopBHD indicates an expected call of CreateDongGopBHD.
+func (mr *MockQuerierMockRecorder) CreateDongGopBHD(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateDongGopBHD", reflect.TypeOf((*MockQuerier)(nil).CreateDongGopBHD), ctx, arg)
+}
+
+// CreateDongGopDV mocks base method.
+func (m *MockQuerier) CreateDongGopDV(ctx context.Context, arg db.CreateDongGopDVParams) (db.DongGopDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateDongGopDV", ctx, arg)
+	ret0, _ := ret[0].(db.DongGopDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateDongGopDV indicates an expected call of CreateDongGopDV.
+func (mr *MockQuerierMockRecorder) CreateDongGopDV(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateDongGopDV", reflect.TypeOf((*MockQuerier)(nil).CreateDongGopDV), ctx, arg)
+}
+
+// CreateHuynhTruong mocks base method.
+func (m *MockQuerier) CreateHuynhTruong(ctx context.Context, arg db.CreateHuynhTruongParams) (db.HuynhTruong, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateHuynhTruong", ctx, arg)
+	ret0, _ := ret[0].(db.HuynhTruong)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateHuynhTruong indicates an expected call of CreateHuynhTruong.
+func (mr *MockQuerierMockRecorder) CreateHuynhTruong(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateHuynhTruong", reflect.TypeOf((*MockQuerier)(nil).CreateHuynhTruong), ctx, arg)
+}
+
+// CreateKetKhoaTraiHL mocks base method.
+func (m *MockQuerier) CreateKetKhoaTraiHL(ctx context.Context, arg db.CreateKetKhoaTraiHLParams) (db.KetKhoaTraiHl, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateKetKhoaTraiHL", ctx, arg)
+	ret0, _ := ret[0].(db.KetKhoaTraiHl)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateKetKhoaTraiHL indicates an expected call of CreateKetKhoaTraiHL.
+func (mr *MockQuerierMockRecorder) CreateKetKhoaTraiHL(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateKetKhoaTraiHL", reflect.TypeOf((*MockQuerier)(nil).CreateKetKhoaTraiHL), ctx, arg)
+}
+
+// CreateNgayTraiHuanLuyen mocks base method.
+func (m *MockQuerier) CreateNgayTraiHuanLuyen(ctx context.Context, arg db.CreateNgayTraiHuanLuyenParams) (db.NgayTraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateNgayTraiHuanLuyen", ctx, arg)
+	ret0, _ := ret[0].(db.NgayTraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateNgayTraiHuanLuyen indicates an expected call of CreateNgayTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) CreateNgayTraiHuanLuyen(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateNgayTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).CreateNgayTraiHuanLuyen), ctx, arg)
+}
+
+// CreateNgayTuHoc mocks base method.
+func (m *MockQuerier) CreateNgayTuHoc(ctx context.Context, arg db.CreateNgayTuHocParams) (db.NgayTuHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateNgayTuHoc", ctx, arg)
+	ret0, _ := ret[0].(db.NgayTuHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateNgayTuHoc indicates an expected call of CreateNgayTuHoc.
+func (mr *MockQuerierMockRecorder) CreateNgayTuHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateNgayTuHoc", reflect.TypeOf((*MockQuerier)(nil).CreateNgayTuHoc), ctx, arg)
+}
+
+// CreateNienKhoaBacHoc mocks base method.
+func (m *MockQuerier) CreateNienKhoaBacHoc(ctx context.Context, arg db.CreateNienKhoaBacHocParams) (db.Nienkhoabachoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateNienKhoaBacHoc", ctx, arg)
+	ret0, _ := ret[0].(db.Nienkhoabachoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateNienKhoaBacHoc indicates an expected call of CreateNienKhoaBacHoc.
+func (mr *MockQuerierMockRecorder) CreateNienKhoaBacHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateNienKhoaBacHoc", reflect.TypeOf((*MockQuerier)(nil).CreateNienKhoaBacHoc), ctx, arg)
+}
+
+// CreateNienKhoaTraiHuanLuyen mocks base method.
+func (m *MockQuerier) CreateNienKhoaTraiHuanLuyen(ctx context.Context, arg db.CreateNienKhoaTraiHuanLuyenParams) (db.Nienkhoatraihuanluyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateNienKhoaTraiHuanLuyen", ctx, arg)
+	ret0, _ := ret[0].(db.Nienkhoatraihuanluyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateNienKhoaTraiHuanLuyen indicates an expected call of CreateNienKhoaTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) CreateNienKhoaTraiHuanLuyen(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateNienKhoaTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).CreateNienKhoaTraiHuanLuyen), ctx, arg)
+}
+
 // CreatePost mocks base method.
 func (m *MockQuerier) CreatePost(ctx context.Context, arg db.CreatePostParams) (db.Post, error) {
 	m.ctrl.T.Helper()
@@ -110,6 +290,51 @@ func (mr *MockQuerierMockRecorder) CreateReset(ctx, arg interface{}) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateReset", reflect.TypeOf((*MockQuerier)(nil).CreateReset), ctx, arg)
 }
 
+// CreateThiBacHoc mocks base method.
+func (m *MockQuerier) CreateThiBacHoc(ctx context.Context, arg db.CreateThiBacHocParams) (db.ThiBacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateThiBacHoc", ctx, arg)
+	ret0, _ := ret[0].(db.ThiBacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateThiBacHoc indicates an expected call of CreateThiBacHoc.
+func (mr *MockQuerierMockRecorder) CreateThiBacHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateThiBacHoc", reflect.TypeOf((*MockQuerier)(nil).CreateThiBacHoc), ctx, arg)
+}
+
+// CreateThoCap mocks base method.
+func (m *MockQuerier) CreateThoCap(ctx context.Context, arg db.CreateThoCapParams) (db.ThoCap, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateThoCap", ctx, arg)
+	ret0, _ := ret[0].(db.ThoCap)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateThoCap indicates an expected call of CreateThoCap.
+func (mr *MockQuerierMockRecorder) CreateThoCap(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateThoCap", reflect.TypeOf((*MockQuerier)(nil).CreateThoCap), ctx, arg)
+}
+
+// CreateTraiHuanLuyen mocks base method.
+func (m *MockQuerier) CreateTraiHuanLuyen(ctx context.Context, arg db.CreateTraiHuanLuyenParams) (db.TraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateTraiHuanLuyen", ctx, arg)
+	ret0, _ := ret[0].(db.TraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateTraiHuanLuyen indicates an expected call of CreateTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) CreateTraiHuanLuyen(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).CreateTraiHuanLuyen), ctx, arg)
+}
+
 // CreateUser mocks base method.
 func (m *MockQuerier) CreateUser(ctx context.Context, arg db.CreateUserParams) (db.User, error) {
 	m.ctrl.T.Helper()
@@ -151,6 +376,174 @@ func (m *MockQuerier) DeleteBhdByIDs(ctx context.Context, id string) error {
 func (mr *MockQuerierMockRecorder) DeleteBhdByIDs(ctx, id interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteBhdByIDs", reflect.TypeOf((*MockQuerier)(nil).DeleteBhdByIDs), ctx, id)
+}
+
+// DeleteCapBacByID mocks base method.
+func (m *MockQuerier) DeleteCapBacByID(ctx context.Context, id string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteCapBacByID", ctx, id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteCapBacByID indicates an expected call of DeleteCapBacByID.
+func (mr *MockQuerierMockRecorder) DeleteCapBacByID(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteCapBacByID", reflect.TypeOf((*MockQuerier)(nil).DeleteCapBacByID), ctx, id)
+}
+
+// DeleteDamNhiemCVBHDByIDAndYear mocks base method.
+func (m *MockQuerier) DeleteDamNhiemCVBHDByIDAndYear(ctx context.Context, arg db.DeleteDamNhiemCVBHDByIDAndYearParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteDamNhiemCVBHDByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteDamNhiemCVBHDByIDAndYear indicates an expected call of DeleteDamNhiemCVBHDByIDAndYear.
+func (mr *MockQuerierMockRecorder) DeleteDamNhiemCVBHDByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteDamNhiemCVBHDByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).DeleteDamNhiemCVBHDByIDAndYear), ctx, arg)
+}
+
+// DeleteDamNhiemCVDVByIDAndYear mocks base method.
+func (m *MockQuerier) DeleteDamNhiemCVDVByIDAndYear(ctx context.Context, arg db.DeleteDamNhiemCVDVByIDAndYearParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteDamNhiemCVDVByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteDamNhiemCVDVByIDAndYear indicates an expected call of DeleteDamNhiemCVDVByIDAndYear.
+func (mr *MockQuerierMockRecorder) DeleteDamNhiemCVDVByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteDamNhiemCVDVByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).DeleteDamNhiemCVDVByIDAndYear), ctx, arg)
+}
+
+// DeleteDonViByID mocks base method.
+func (m *MockQuerier) DeleteDonViByID(ctx context.Context, donviID string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteDonViByID", ctx, donviID)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteDonViByID indicates an expected call of DeleteDonViByID.
+func (mr *MockQuerierMockRecorder) DeleteDonViByID(ctx, donviID interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteDonViByID", reflect.TypeOf((*MockQuerier)(nil).DeleteDonViByID), ctx, donviID)
+}
+
+// DeleteDongGopBHDByIDAndYear mocks base method.
+func (m *MockQuerier) DeleteDongGopBHDByIDAndYear(ctx context.Context, arg db.DeleteDongGopBHDByIDAndYearParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteDongGopBHDByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteDongGopBHDByIDAndYear indicates an expected call of DeleteDongGopBHDByIDAndYear.
+func (mr *MockQuerierMockRecorder) DeleteDongGopBHDByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteDongGopBHDByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).DeleteDongGopBHDByIDAndYear), ctx, arg)
+}
+
+// DeleteDongGopDVByIDAndYear mocks base method.
+func (m *MockQuerier) DeleteDongGopDVByIDAndYear(ctx context.Context, arg db.DeleteDongGopDVByIDAndYearParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteDongGopDVByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteDongGopDVByIDAndYear indicates an expected call of DeleteDongGopDVByIDAndYear.
+func (mr *MockQuerierMockRecorder) DeleteDongGopDVByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteDongGopDVByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).DeleteDongGopDVByIDAndYear), ctx, arg)
+}
+
+// DeleteHuynhTruongByID mocks base method.
+func (m *MockQuerier) DeleteHuynhTruongByID(ctx context.Context, huynhtruongID string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteHuynhTruongByID", ctx, huynhtruongID)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteHuynhTruongByID indicates an expected call of DeleteHuynhTruongByID.
+func (mr *MockQuerierMockRecorder) DeleteHuynhTruongByID(ctx, huynhtruongID interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteHuynhTruongByID", reflect.TypeOf((*MockQuerier)(nil).DeleteHuynhTruongByID), ctx, huynhtruongID)
+}
+
+// DeleteKetKhoaTraiHLByIDAndDate mocks base method.
+func (m *MockQuerier) DeleteKetKhoaTraiHLByIDAndDate(ctx context.Context, arg db.DeleteKetKhoaTraiHLByIDAndDateParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteKetKhoaTraiHLByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteKetKhoaTraiHLByIDAndDate indicates an expected call of DeleteKetKhoaTraiHLByIDAndDate.
+func (mr *MockQuerierMockRecorder) DeleteKetKhoaTraiHLByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteKetKhoaTraiHLByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).DeleteKetKhoaTraiHLByIDAndDate), ctx, arg)
+}
+
+// DeleteNgayTraiHuanLuyenByIDAndDate mocks base method.
+func (m *MockQuerier) DeleteNgayTraiHuanLuyenByIDAndDate(ctx context.Context, arg db.DeleteNgayTraiHuanLuyenByIDAndDateParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteNgayTraiHuanLuyenByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteNgayTraiHuanLuyenByIDAndDate indicates an expected call of DeleteNgayTraiHuanLuyenByIDAndDate.
+func (mr *MockQuerierMockRecorder) DeleteNgayTraiHuanLuyenByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteNgayTraiHuanLuyenByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).DeleteNgayTraiHuanLuyenByIDAndDate), ctx, arg)
+}
+
+// DeleteNgayTuHocByIDAndDate mocks base method.
+func (m *MockQuerier) DeleteNgayTuHocByIDAndDate(ctx context.Context, arg db.DeleteNgayTuHocByIDAndDateParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteNgayTuHocByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteNgayTuHocByIDAndDate indicates an expected call of DeleteNgayTuHocByIDAndDate.
+func (mr *MockQuerierMockRecorder) DeleteNgayTuHocByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteNgayTuHocByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).DeleteNgayTuHocByIDAndDate), ctx, arg)
+}
+
+// DeleteNienKhoaBacHocByIDAndYear mocks base method.
+func (m *MockQuerier) DeleteNienKhoaBacHocByIDAndYear(ctx context.Context, arg db.DeleteNienKhoaBacHocByIDAndYearParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteNienKhoaBacHocByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteNienKhoaBacHocByIDAndYear indicates an expected call of DeleteNienKhoaBacHocByIDAndYear.
+func (mr *MockQuerierMockRecorder) DeleteNienKhoaBacHocByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteNienKhoaBacHocByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).DeleteNienKhoaBacHocByIDAndYear), ctx, arg)
+}
+
+// DeleteNienKhoaTraiHuanLuyenByIDAndYear mocks base method.
+func (m *MockQuerier) DeleteNienKhoaTraiHuanLuyenByIDAndYear(ctx context.Context, arg db.DeleteNienKhoaTraiHuanLuyenByIDAndYearParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteNienKhoaTraiHuanLuyenByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteNienKhoaTraiHuanLuyenByIDAndYear indicates an expected call of DeleteNienKhoaTraiHuanLuyenByIDAndYear.
+func (mr *MockQuerierMockRecorder) DeleteNienKhoaTraiHuanLuyenByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteNienKhoaTraiHuanLuyenByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).DeleteNienKhoaTraiHuanLuyenByIDAndYear), ctx, arg)
 }
 
 // DeletePostByIDs mocks base method.
@@ -195,6 +588,228 @@ func (mr *MockQuerierMockRecorder) DeleteResetsForUser(ctx, userID interface{}) 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteResetsForUser", reflect.TypeOf((*MockQuerier)(nil).DeleteResetsForUser), ctx, userID)
 }
 
+// DeleteThiBacHocByIDAndDate mocks base method.
+func (m *MockQuerier) DeleteThiBacHocByIDAndDate(ctx context.Context, arg db.DeleteThiBacHocByIDAndDateParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteThiBacHocByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteThiBacHocByIDAndDate indicates an expected call of DeleteThiBacHocByIDAndDate.
+func (mr *MockQuerierMockRecorder) DeleteThiBacHocByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteThiBacHocByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).DeleteThiBacHocByIDAndDate), ctx, arg)
+}
+
+// DeleteThoCapByIDAndYear mocks base method.
+func (m *MockQuerier) DeleteThoCapByIDAndYear(ctx context.Context, arg db.DeleteThoCapByIDAndYearParams) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteThoCapByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteThoCapByIDAndYear indicates an expected call of DeleteThoCapByIDAndYear.
+func (mr *MockQuerierMockRecorder) DeleteThoCapByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteThoCapByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).DeleteThoCapByIDAndYear), ctx, arg)
+}
+
+// DeleteTraiHuanLuyenByID mocks base method.
+func (m *MockQuerier) DeleteTraiHuanLuyenByID(ctx context.Context, id string) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteTraiHuanLuyenByID", ctx, id)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// DeleteTraiHuanLuyenByID indicates an expected call of DeleteTraiHuanLuyenByID.
+func (mr *MockQuerierMockRecorder) DeleteTraiHuanLuyenByID(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteTraiHuanLuyenByID", reflect.TypeOf((*MockQuerier)(nil).DeleteTraiHuanLuyenByID), ctx, id)
+}
+
+// FindAllCapBac mocks base method.
+func (m *MockQuerier) FindAllCapBac(ctx context.Context) ([]db.CapBac, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllCapBac", ctx)
+	ret0, _ := ret[0].([]db.CapBac)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllCapBac indicates an expected call of FindAllCapBac.
+func (mr *MockQuerierMockRecorder) FindAllCapBac(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllCapBac", reflect.TypeOf((*MockQuerier)(nil).FindAllCapBac), ctx)
+}
+
+// FindAllDamNhiemCVBHD mocks base method.
+func (m *MockQuerier) FindAllDamNhiemCVBHD(ctx context.Context) ([]db.DamNhiemCvBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllDamNhiemCVBHD", ctx)
+	ret0, _ := ret[0].([]db.DamNhiemCvBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllDamNhiemCVBHD indicates an expected call of FindAllDamNhiemCVBHD.
+func (mr *MockQuerierMockRecorder) FindAllDamNhiemCVBHD(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllDamNhiemCVBHD", reflect.TypeOf((*MockQuerier)(nil).FindAllDamNhiemCVBHD), ctx)
+}
+
+// FindAllDamNhiemCVDV mocks base method.
+func (m *MockQuerier) FindAllDamNhiemCVDV(ctx context.Context) ([]db.DamNhiemCvDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllDamNhiemCVDV", ctx)
+	ret0, _ := ret[0].([]db.DamNhiemCvDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllDamNhiemCVDV indicates an expected call of FindAllDamNhiemCVDV.
+func (mr *MockQuerierMockRecorder) FindAllDamNhiemCVDV(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllDamNhiemCVDV", reflect.TypeOf((*MockQuerier)(nil).FindAllDamNhiemCVDV), ctx)
+}
+
+// FindAllDonVi mocks base method.
+func (m *MockQuerier) FindAllDonVi(ctx context.Context) ([]db.DonVi, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllDonVi", ctx)
+	ret0, _ := ret[0].([]db.DonVi)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllDonVi indicates an expected call of FindAllDonVi.
+func (mr *MockQuerierMockRecorder) FindAllDonVi(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllDonVi", reflect.TypeOf((*MockQuerier)(nil).FindAllDonVi), ctx)
+}
+
+// FindAllDongGopBHD mocks base method.
+func (m *MockQuerier) FindAllDongGopBHD(ctx context.Context) ([]db.DongGopBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllDongGopBHD", ctx)
+	ret0, _ := ret[0].([]db.DongGopBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllDongGopBHD indicates an expected call of FindAllDongGopBHD.
+func (mr *MockQuerierMockRecorder) FindAllDongGopBHD(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllDongGopBHD", reflect.TypeOf((*MockQuerier)(nil).FindAllDongGopBHD), ctx)
+}
+
+// FindAllDongGopDV mocks base method.
+func (m *MockQuerier) FindAllDongGopDV(ctx context.Context) ([]db.DongGopDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllDongGopDV", ctx)
+	ret0, _ := ret[0].([]db.DongGopDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllDongGopDV indicates an expected call of FindAllDongGopDV.
+func (mr *MockQuerierMockRecorder) FindAllDongGopDV(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllDongGopDV", reflect.TypeOf((*MockQuerier)(nil).FindAllDongGopDV), ctx)
+}
+
+// FindAllHuynhTruong mocks base method.
+func (m *MockQuerier) FindAllHuynhTruong(ctx context.Context) ([]db.HuynhTruong, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllHuynhTruong", ctx)
+	ret0, _ := ret[0].([]db.HuynhTruong)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllHuynhTruong indicates an expected call of FindAllHuynhTruong.
+func (mr *MockQuerierMockRecorder) FindAllHuynhTruong(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllHuynhTruong", reflect.TypeOf((*MockQuerier)(nil).FindAllHuynhTruong), ctx)
+}
+
+// FindAllKetKhoaTraiHL mocks base method.
+func (m *MockQuerier) FindAllKetKhoaTraiHL(ctx context.Context) ([]db.KetKhoaTraiHl, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllKetKhoaTraiHL", ctx)
+	ret0, _ := ret[0].([]db.KetKhoaTraiHl)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllKetKhoaTraiHL indicates an expected call of FindAllKetKhoaTraiHL.
+func (mr *MockQuerierMockRecorder) FindAllKetKhoaTraiHL(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllKetKhoaTraiHL", reflect.TypeOf((*MockQuerier)(nil).FindAllKetKhoaTraiHL), ctx)
+}
+
+// FindAllNgayTraiHuanLuyen mocks base method.
+func (m *MockQuerier) FindAllNgayTraiHuanLuyen(ctx context.Context) ([]db.NgayTraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllNgayTraiHuanLuyen", ctx)
+	ret0, _ := ret[0].([]db.NgayTraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllNgayTraiHuanLuyen indicates an expected call of FindAllNgayTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) FindAllNgayTraiHuanLuyen(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllNgayTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).FindAllNgayTraiHuanLuyen), ctx)
+}
+
+// FindAllNgayTuHoc mocks base method.
+func (m *MockQuerier) FindAllNgayTuHoc(ctx context.Context) ([]db.NgayTuHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllNgayTuHoc", ctx)
+	ret0, _ := ret[0].([]db.NgayTuHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllNgayTuHoc indicates an expected call of FindAllNgayTuHoc.
+func (mr *MockQuerierMockRecorder) FindAllNgayTuHoc(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllNgayTuHoc", reflect.TypeOf((*MockQuerier)(nil).FindAllNgayTuHoc), ctx)
+}
+
+// FindAllNienKhoaBacHoc mocks base method.
+func (m *MockQuerier) FindAllNienKhoaBacHoc(ctx context.Context) ([]db.Nienkhoabachoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllNienKhoaBacHoc", ctx)
+	ret0, _ := ret[0].([]db.Nienkhoabachoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllNienKhoaBacHoc indicates an expected call of FindAllNienKhoaBacHoc.
+func (mr *MockQuerierMockRecorder) FindAllNienKhoaBacHoc(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllNienKhoaBacHoc", reflect.TypeOf((*MockQuerier)(nil).FindAllNienKhoaBacHoc), ctx)
+}
+
+// FindAllNienKhoaTraiHuanLuyen mocks base method.
+func (m *MockQuerier) FindAllNienKhoaTraiHuanLuyen(ctx context.Context) ([]db.Nienkhoatraihuanluyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllNienKhoaTraiHuanLuyen", ctx)
+	ret0, _ := ret[0].([]db.Nienkhoatraihuanluyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllNienKhoaTraiHuanLuyen indicates an expected call of FindAllNienKhoaTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) FindAllNienKhoaTraiHuanLuyen(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllNienKhoaTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).FindAllNienKhoaTraiHuanLuyen), ctx)
+}
+
 // FindAllQuestions mocks base method.
 func (m *MockQuerier) FindAllQuestions(ctx context.Context) ([]db.Question, error) {
 	m.ctrl.T.Helper()
@@ -208,6 +823,51 @@ func (m *MockQuerier) FindAllQuestions(ctx context.Context) ([]db.Question, erro
 func (mr *MockQuerierMockRecorder) FindAllQuestions(ctx interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllQuestions", reflect.TypeOf((*MockQuerier)(nil).FindAllQuestions), ctx)
+}
+
+// FindAllThiBacHoc mocks base method.
+func (m *MockQuerier) FindAllThiBacHoc(ctx context.Context) ([]db.ThiBacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllThiBacHoc", ctx)
+	ret0, _ := ret[0].([]db.ThiBacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllThiBacHoc indicates an expected call of FindAllThiBacHoc.
+func (mr *MockQuerierMockRecorder) FindAllThiBacHoc(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllThiBacHoc", reflect.TypeOf((*MockQuerier)(nil).FindAllThiBacHoc), ctx)
+}
+
+// FindAllThoCap mocks base method.
+func (m *MockQuerier) FindAllThoCap(ctx context.Context) ([]db.ThoCap, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllThoCap", ctx)
+	ret0, _ := ret[0].([]db.ThoCap)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllThoCap indicates an expected call of FindAllThoCap.
+func (mr *MockQuerierMockRecorder) FindAllThoCap(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllThoCap", reflect.TypeOf((*MockQuerier)(nil).FindAllThoCap), ctx)
+}
+
+// FindAllTraiHuanLuyen mocks base method.
+func (m *MockQuerier) FindAllTraiHuanLuyen(ctx context.Context) ([]db.TraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindAllTraiHuanLuyen", ctx)
+	ret0, _ := ret[0].([]db.TraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindAllTraiHuanLuyen indicates an expected call of FindAllTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) FindAllTraiHuanLuyen(ctx interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindAllTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).FindAllTraiHuanLuyen), ctx)
 }
 
 // FindBacHoc mocks base method.
@@ -270,6 +930,186 @@ func (mr *MockQuerierMockRecorder) FindBhdByIDs(ctx, id interface{}) *gomock.Cal
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindBhdByIDs", reflect.TypeOf((*MockQuerier)(nil).FindBhdByIDs), ctx, id)
 }
 
+// FindCapBacByID mocks base method.
+func (m *MockQuerier) FindCapBacByID(ctx context.Context, id string) (db.CapBac, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindCapBacByID", ctx, id)
+	ret0, _ := ret[0].(db.CapBac)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindCapBacByID indicates an expected call of FindCapBacByID.
+func (mr *MockQuerierMockRecorder) FindCapBacByID(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindCapBacByID", reflect.TypeOf((*MockQuerier)(nil).FindCapBacByID), ctx, id)
+}
+
+// FindDamNhiemCVBHDByIDAndYear mocks base method.
+func (m *MockQuerier) FindDamNhiemCVBHDByIDAndYear(ctx context.Context, arg db.FindDamNhiemCVBHDByIDAndYearParams) (db.DamNhiemCvBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindDamNhiemCVBHDByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(db.DamNhiemCvBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindDamNhiemCVBHDByIDAndYear indicates an expected call of FindDamNhiemCVBHDByIDAndYear.
+func (mr *MockQuerierMockRecorder) FindDamNhiemCVBHDByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindDamNhiemCVBHDByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).FindDamNhiemCVBHDByIDAndYear), ctx, arg)
+}
+
+// FindDamNhiemCVDVByIDAndYear mocks base method.
+func (m *MockQuerier) FindDamNhiemCVDVByIDAndYear(ctx context.Context, arg db.FindDamNhiemCVDVByIDAndYearParams) (db.DamNhiemCvDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindDamNhiemCVDVByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(db.DamNhiemCvDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindDamNhiemCVDVByIDAndYear indicates an expected call of FindDamNhiemCVDVByIDAndYear.
+func (mr *MockQuerierMockRecorder) FindDamNhiemCVDVByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindDamNhiemCVDVByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).FindDamNhiemCVDVByIDAndYear), ctx, arg)
+}
+
+// FindDonViByID mocks base method.
+func (m *MockQuerier) FindDonViByID(ctx context.Context, donviID string) (db.DonVi, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindDonViByID", ctx, donviID)
+	ret0, _ := ret[0].(db.DonVi)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindDonViByID indicates an expected call of FindDonViByID.
+func (mr *MockQuerierMockRecorder) FindDonViByID(ctx, donviID interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindDonViByID", reflect.TypeOf((*MockQuerier)(nil).FindDonViByID), ctx, donviID)
+}
+
+// FindDongGopBHDByIDAndYear mocks base method.
+func (m *MockQuerier) FindDongGopBHDByIDAndYear(ctx context.Context, arg db.FindDongGopBHDByIDAndYearParams) (db.DongGopBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindDongGopBHDByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(db.DongGopBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindDongGopBHDByIDAndYear indicates an expected call of FindDongGopBHDByIDAndYear.
+func (mr *MockQuerierMockRecorder) FindDongGopBHDByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindDongGopBHDByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).FindDongGopBHDByIDAndYear), ctx, arg)
+}
+
+// FindDongGopDVByIDAndYear mocks base method.
+func (m *MockQuerier) FindDongGopDVByIDAndYear(ctx context.Context, arg db.FindDongGopDVByIDAndYearParams) (db.DongGopDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindDongGopDVByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(db.DongGopDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindDongGopDVByIDAndYear indicates an expected call of FindDongGopDVByIDAndYear.
+func (mr *MockQuerierMockRecorder) FindDongGopDVByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindDongGopDVByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).FindDongGopDVByIDAndYear), ctx, arg)
+}
+
+// FindHuynhTruongByID mocks base method.
+func (m *MockQuerier) FindHuynhTruongByID(ctx context.Context, huynhtruongID string) (db.HuynhTruong, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindHuynhTruongByID", ctx, huynhtruongID)
+	ret0, _ := ret[0].(db.HuynhTruong)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindHuynhTruongByID indicates an expected call of FindHuynhTruongByID.
+func (mr *MockQuerierMockRecorder) FindHuynhTruongByID(ctx, huynhtruongID interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindHuynhTruongByID", reflect.TypeOf((*MockQuerier)(nil).FindHuynhTruongByID), ctx, huynhtruongID)
+}
+
+// FindKetKhoaTraiHLByIDAndDate mocks base method.
+func (m *MockQuerier) FindKetKhoaTraiHLByIDAndDate(ctx context.Context, arg db.FindKetKhoaTraiHLByIDAndDateParams) (db.KetKhoaTraiHl, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindKetKhoaTraiHLByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(db.KetKhoaTraiHl)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindKetKhoaTraiHLByIDAndDate indicates an expected call of FindKetKhoaTraiHLByIDAndDate.
+func (mr *MockQuerierMockRecorder) FindKetKhoaTraiHLByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindKetKhoaTraiHLByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).FindKetKhoaTraiHLByIDAndDate), ctx, arg)
+}
+
+// FindNgayTraiHuanLuyenByIDAndDate mocks base method.
+func (m *MockQuerier) FindNgayTraiHuanLuyenByIDAndDate(ctx context.Context, arg db.FindNgayTraiHuanLuyenByIDAndDateParams) (db.NgayTraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindNgayTraiHuanLuyenByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(db.NgayTraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindNgayTraiHuanLuyenByIDAndDate indicates an expected call of FindNgayTraiHuanLuyenByIDAndDate.
+func (mr *MockQuerierMockRecorder) FindNgayTraiHuanLuyenByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindNgayTraiHuanLuyenByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).FindNgayTraiHuanLuyenByIDAndDate), ctx, arg)
+}
+
+// FindNgayTuHocByIDAndDate mocks base method.
+func (m *MockQuerier) FindNgayTuHocByIDAndDate(ctx context.Context, arg db.FindNgayTuHocByIDAndDateParams) (db.NgayTuHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindNgayTuHocByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(db.NgayTuHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindNgayTuHocByIDAndDate indicates an expected call of FindNgayTuHocByIDAndDate.
+func (mr *MockQuerierMockRecorder) FindNgayTuHocByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindNgayTuHocByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).FindNgayTuHocByIDAndDate), ctx, arg)
+}
+
+// FindNienKhoaBacHocByIDAndYear mocks base method.
+func (m *MockQuerier) FindNienKhoaBacHocByIDAndYear(ctx context.Context, arg db.FindNienKhoaBacHocByIDAndYearParams) (db.Nienkhoabachoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindNienKhoaBacHocByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(db.Nienkhoabachoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindNienKhoaBacHocByIDAndYear indicates an expected call of FindNienKhoaBacHocByIDAndYear.
+func (mr *MockQuerierMockRecorder) FindNienKhoaBacHocByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindNienKhoaBacHocByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).FindNienKhoaBacHocByIDAndYear), ctx, arg)
+}
+
+// FindNienKhoaTraiHuanLuyenByIDAndYear mocks base method.
+func (m *MockQuerier) FindNienKhoaTraiHuanLuyenByIDAndYear(ctx context.Context, arg db.FindNienKhoaTraiHuanLuyenByIDAndYearParams) (db.Nienkhoatraihuanluyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindNienKhoaTraiHuanLuyenByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(db.Nienkhoatraihuanluyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindNienKhoaTraiHuanLuyenByIDAndYear indicates an expected call of FindNienKhoaTraiHuanLuyenByIDAndYear.
+func (mr *MockQuerierMockRecorder) FindNienKhoaTraiHuanLuyenByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindNienKhoaTraiHuanLuyenByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).FindNienKhoaTraiHuanLuyenByIDAndYear), ctx, arg)
+}
+
 // FindPostByIDs mocks base method.
 func (m *MockQuerier) FindPostByIDs(ctx context.Context, arg db.FindPostByIDsParams) (db.Post, error) {
 	m.ctrl.T.Helper()
@@ -328,6 +1168,51 @@ func (m *MockQuerier) FindResetByCode(ctx context.Context, code string) (db.Rese
 func (mr *MockQuerierMockRecorder) FindResetByCode(ctx, code interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindResetByCode", reflect.TypeOf((*MockQuerier)(nil).FindResetByCode), ctx, code)
+}
+
+// FindThiBacHocByIDAndDate mocks base method.
+func (m *MockQuerier) FindThiBacHocByIDAndDate(ctx context.Context, arg db.FindThiBacHocByIDAndDateParams) (db.ThiBacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindThiBacHocByIDAndDate", ctx, arg)
+	ret0, _ := ret[0].(db.ThiBacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindThiBacHocByIDAndDate indicates an expected call of FindThiBacHocByIDAndDate.
+func (mr *MockQuerierMockRecorder) FindThiBacHocByIDAndDate(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindThiBacHocByIDAndDate", reflect.TypeOf((*MockQuerier)(nil).FindThiBacHocByIDAndDate), ctx, arg)
+}
+
+// FindThoCapByIDAndYear mocks base method.
+func (m *MockQuerier) FindThoCapByIDAndYear(ctx context.Context, arg db.FindThoCapByIDAndYearParams) (db.ThoCap, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindThoCapByIDAndYear", ctx, arg)
+	ret0, _ := ret[0].(db.ThoCap)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindThoCapByIDAndYear indicates an expected call of FindThoCapByIDAndYear.
+func (mr *MockQuerierMockRecorder) FindThoCapByIDAndYear(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindThoCapByIDAndYear", reflect.TypeOf((*MockQuerier)(nil).FindThoCapByIDAndYear), ctx, arg)
+}
+
+// FindTraiHuanLuyenByID mocks base method.
+func (m *MockQuerier) FindTraiHuanLuyenByID(ctx context.Context, id string) (db.TraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FindTraiHuanLuyenByID", ctx, id)
+	ret0, _ := ret[0].(db.TraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FindTraiHuanLuyenByID indicates an expected call of FindTraiHuanLuyenByID.
+func (mr *MockQuerierMockRecorder) FindTraiHuanLuyenByID(ctx, id interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FindTraiHuanLuyenByID", reflect.TypeOf((*MockQuerier)(nil).FindTraiHuanLuyenByID), ctx, id)
 }
 
 // FindUserByEmail mocks base method.
@@ -405,6 +1290,186 @@ func (mr *MockQuerierMockRecorder) UpdateBhd(ctx, arg interface{}) *gomock.Call 
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateBhd", reflect.TypeOf((*MockQuerier)(nil).UpdateBhd), ctx, arg)
 }
 
+// UpdateCapBac mocks base method.
+func (m *MockQuerier) UpdateCapBac(ctx context.Context, arg db.UpdateCapBacParams) (db.CapBac, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateCapBac", ctx, arg)
+	ret0, _ := ret[0].(db.CapBac)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateCapBac indicates an expected call of UpdateCapBac.
+func (mr *MockQuerierMockRecorder) UpdateCapBac(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateCapBac", reflect.TypeOf((*MockQuerier)(nil).UpdateCapBac), ctx, arg)
+}
+
+// UpdateDamNhiemCVBHD mocks base method.
+func (m *MockQuerier) UpdateDamNhiemCVBHD(ctx context.Context, arg db.UpdateDamNhiemCVBHDParams) (db.DamNhiemCvBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateDamNhiemCVBHD", ctx, arg)
+	ret0, _ := ret[0].(db.DamNhiemCvBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateDamNhiemCVBHD indicates an expected call of UpdateDamNhiemCVBHD.
+func (mr *MockQuerierMockRecorder) UpdateDamNhiemCVBHD(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDamNhiemCVBHD", reflect.TypeOf((*MockQuerier)(nil).UpdateDamNhiemCVBHD), ctx, arg)
+}
+
+// UpdateDamNhiemCVDV mocks base method.
+func (m *MockQuerier) UpdateDamNhiemCVDV(ctx context.Context, arg db.UpdateDamNhiemCVDVParams) (db.DamNhiemCvDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateDamNhiemCVDV", ctx, arg)
+	ret0, _ := ret[0].(db.DamNhiemCvDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateDamNhiemCVDV indicates an expected call of UpdateDamNhiemCVDV.
+func (mr *MockQuerierMockRecorder) UpdateDamNhiemCVDV(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDamNhiemCVDV", reflect.TypeOf((*MockQuerier)(nil).UpdateDamNhiemCVDV), ctx, arg)
+}
+
+// UpdateDonVi mocks base method.
+func (m *MockQuerier) UpdateDonVi(ctx context.Context, arg db.UpdateDonViParams) (db.DonVi, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateDonVi", ctx, arg)
+	ret0, _ := ret[0].(db.DonVi)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateDonVi indicates an expected call of UpdateDonVi.
+func (mr *MockQuerierMockRecorder) UpdateDonVi(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDonVi", reflect.TypeOf((*MockQuerier)(nil).UpdateDonVi), ctx, arg)
+}
+
+// UpdateDongGopBHD mocks base method.
+func (m *MockQuerier) UpdateDongGopBHD(ctx context.Context, arg db.UpdateDongGopBHDParams) (db.DongGopBhd, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateDongGopBHD", ctx, arg)
+	ret0, _ := ret[0].(db.DongGopBhd)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateDongGopBHD indicates an expected call of UpdateDongGopBHD.
+func (mr *MockQuerierMockRecorder) UpdateDongGopBHD(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDongGopBHD", reflect.TypeOf((*MockQuerier)(nil).UpdateDongGopBHD), ctx, arg)
+}
+
+// UpdateDongGopDV mocks base method.
+func (m *MockQuerier) UpdateDongGopDV(ctx context.Context, arg db.UpdateDongGopDVParams) (db.DongGopDv, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateDongGopDV", ctx, arg)
+	ret0, _ := ret[0].(db.DongGopDv)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateDongGopDV indicates an expected call of UpdateDongGopDV.
+func (mr *MockQuerierMockRecorder) UpdateDongGopDV(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateDongGopDV", reflect.TypeOf((*MockQuerier)(nil).UpdateDongGopDV), ctx, arg)
+}
+
+// UpdateHuynhTruong mocks base method.
+func (m *MockQuerier) UpdateHuynhTruong(ctx context.Context, arg db.UpdateHuynhTruongParams) (db.HuynhTruong, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateHuynhTruong", ctx, arg)
+	ret0, _ := ret[0].(db.HuynhTruong)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateHuynhTruong indicates an expected call of UpdateHuynhTruong.
+func (mr *MockQuerierMockRecorder) UpdateHuynhTruong(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateHuynhTruong", reflect.TypeOf((*MockQuerier)(nil).UpdateHuynhTruong), ctx, arg)
+}
+
+// UpdateKetKhoaTraiHL mocks base method.
+func (m *MockQuerier) UpdateKetKhoaTraiHL(ctx context.Context, arg db.UpdateKetKhoaTraiHLParams) (db.KetKhoaTraiHl, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateKetKhoaTraiHL", ctx, arg)
+	ret0, _ := ret[0].(db.KetKhoaTraiHl)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateKetKhoaTraiHL indicates an expected call of UpdateKetKhoaTraiHL.
+func (mr *MockQuerierMockRecorder) UpdateKetKhoaTraiHL(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateKetKhoaTraiHL", reflect.TypeOf((*MockQuerier)(nil).UpdateKetKhoaTraiHL), ctx, arg)
+}
+
+// UpdateNgayTraiHuanLuyen mocks base method.
+func (m *MockQuerier) UpdateNgayTraiHuanLuyen(ctx context.Context, arg db.UpdateNgayTraiHuanLuyenParams) (db.NgayTraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateNgayTraiHuanLuyen", ctx, arg)
+	ret0, _ := ret[0].(db.NgayTraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateNgayTraiHuanLuyen indicates an expected call of UpdateNgayTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) UpdateNgayTraiHuanLuyen(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateNgayTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).UpdateNgayTraiHuanLuyen), ctx, arg)
+}
+
+// UpdateNgayTuHoc mocks base method.
+func (m *MockQuerier) UpdateNgayTuHoc(ctx context.Context, arg db.UpdateNgayTuHocParams) (db.NgayTuHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateNgayTuHoc", ctx, arg)
+	ret0, _ := ret[0].(db.NgayTuHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateNgayTuHoc indicates an expected call of UpdateNgayTuHoc.
+func (mr *MockQuerierMockRecorder) UpdateNgayTuHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateNgayTuHoc", reflect.TypeOf((*MockQuerier)(nil).UpdateNgayTuHoc), ctx, arg)
+}
+
+// UpdateNienKhoaBacHoc mocks base method.
+func (m *MockQuerier) UpdateNienKhoaBacHoc(ctx context.Context, arg db.UpdateNienKhoaBacHocParams) (db.Nienkhoabachoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateNienKhoaBacHoc", ctx, arg)
+	ret0, _ := ret[0].(db.Nienkhoabachoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateNienKhoaBacHoc indicates an expected call of UpdateNienKhoaBacHoc.
+func (mr *MockQuerierMockRecorder) UpdateNienKhoaBacHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateNienKhoaBacHoc", reflect.TypeOf((*MockQuerier)(nil).UpdateNienKhoaBacHoc), ctx, arg)
+}
+
+// UpdateNienKhoaTraiHuanLuyen mocks base method.
+func (m *MockQuerier) UpdateNienKhoaTraiHuanLuyen(ctx context.Context, arg db.UpdateNienKhoaTraiHuanLuyenParams) (db.Nienkhoatraihuanluyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateNienKhoaTraiHuanLuyen", ctx, arg)
+	ret0, _ := ret[0].(db.Nienkhoatraihuanluyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateNienKhoaTraiHuanLuyen indicates an expected call of UpdateNienKhoaTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) UpdateNienKhoaTraiHuanLuyen(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateNienKhoaTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).UpdateNienKhoaTraiHuanLuyen), ctx, arg)
+}
+
 // UpdatePost mocks base method.
 func (m *MockQuerier) UpdatePost(ctx context.Context, arg db.UpdatePostParams) (db.Post, error) {
 	m.ctrl.T.Helper()
@@ -433,6 +1498,51 @@ func (m *MockQuerier) UpdateQuestion(ctx context.Context, arg db.UpdateQuestionP
 func (mr *MockQuerierMockRecorder) UpdateQuestion(ctx, arg interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateQuestion", reflect.TypeOf((*MockQuerier)(nil).UpdateQuestion), ctx, arg)
+}
+
+// UpdateThiBacHoc mocks base method.
+func (m *MockQuerier) UpdateThiBacHoc(ctx context.Context, arg db.UpdateThiBacHocParams) (db.ThiBacHoc, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateThiBacHoc", ctx, arg)
+	ret0, _ := ret[0].(db.ThiBacHoc)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateThiBacHoc indicates an expected call of UpdateThiBacHoc.
+func (mr *MockQuerierMockRecorder) UpdateThiBacHoc(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateThiBacHoc", reflect.TypeOf((*MockQuerier)(nil).UpdateThiBacHoc), ctx, arg)
+}
+
+// UpdateThoCap mocks base method.
+func (m *MockQuerier) UpdateThoCap(ctx context.Context, arg db.UpdateThoCapParams) (db.ThoCap, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateThoCap", ctx, arg)
+	ret0, _ := ret[0].(db.ThoCap)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateThoCap indicates an expected call of UpdateThoCap.
+func (mr *MockQuerierMockRecorder) UpdateThoCap(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateThoCap", reflect.TypeOf((*MockQuerier)(nil).UpdateThoCap), ctx, arg)
+}
+
+// UpdateTraiHuanLuyen mocks base method.
+func (m *MockQuerier) UpdateTraiHuanLuyen(ctx context.Context, arg db.UpdateTraiHuanLuyenParams) (db.TraiHuanLuyen, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "UpdateTraiHuanLuyen", ctx, arg)
+	ret0, _ := ret[0].(db.TraiHuanLuyen)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// UpdateTraiHuanLuyen indicates an expected call of UpdateTraiHuanLuyen.
+func (mr *MockQuerierMockRecorder) UpdateTraiHuanLuyen(ctx, arg interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "UpdateTraiHuanLuyen", reflect.TypeOf((*MockQuerier)(nil).UpdateTraiHuanLuyen), ctx, arg)
 }
 
 // UpdateUserPassword mocks base method.
