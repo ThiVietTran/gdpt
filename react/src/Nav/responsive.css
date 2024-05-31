@@ -65,4 +65,15 @@
   color: #44596e; /* Active menu item text color */
 }
 
+.fooder_nav {
+  margin-top: 0.5cm;
+padding-top: 8px;
+padding-bottom: 8px;
+  border-radius: 30px;
+  background-color: rgb(192, 228, 192);
+
+}
+.fooder_nav:hover {
+  background-color: rgb(3, 54, 3);
+}
 

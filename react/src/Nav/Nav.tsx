@@ -10,6 +10,7 @@ import { menuClasses } from './utilityClasses';
 import { MenuItemStyles } from './Menu';
 import { Switch } from 'Nav/Switch';
 import { navItems, authItems } from './NavData';
+import { dark, light } from '@mui/material/styles/createPalette';
 
 type Theme = 'light' | 'dark';
 
@@ -111,6 +112,39 @@ const Nav = () => {
     }),
   };
 
+  const renderMenuItems = (items: any[]) => {
+    return items.map((item, index) => {
+      if (item.submenu && item.submenu.length > 0) {
+        return (
+          <LoggedIn>
+            <SubMenu
+              key={index}
+              label={
+                <span>
+                  <Icon name={item.icon} size='large' /> {item.text}
+                </span>
+              }
+            >
+              
+              {renderMenuItems(item.submenu)}
+              
+            </SubMenu>
+          </LoggedIn>
+        );
+      } else {
+        return (
+          <LoggedIn>
+            <MenuItem key={index}>
+              <NavLink to={item.to} className="button-link">
+                <Icon name={item.icon} size='large' /> {item.text}
+              </NavLink>
+            </MenuItem>
+          </LoggedIn>
+        );
+      }
+    });
+  };
+
   return (
     <div style={{ display: "flex", height: "100vh", width: "5vh" }} > {/* Adjusting the width */}
       <Sidebar
@@ -132,23 +166,7 @@ const Nav = () => {
             <MenuItem>
               <NavLink to="/" className="button-link" ><Icon name='home' size='large' /> Home </NavLink>
             </MenuItem>
-            {navItems.map((item, index) => (
-              <React.Fragment key={index}>
-                {item.submenu ? (
-                  <SubMenu label={<span><Icon name={item.icon} size='large' /> {item.text}</span>}>
-                    {item.submenu.map((subItem, subIndex) => (
-                      <MenuItem key={subIndex}>
-                        <NavLink to={subItem.to} className="button-link">{subItem.text}</NavLink>
-                      </MenuItem>
-                    ))}
-                  </SubMenu>
-                ) : (
-                  <MenuItem>
-                    <NavLink to={item.to} className="button-link"><Icon name={item.icon} size='large' /> {item.text}</NavLink>
-                  </MenuItem>
-                )}
-              </React.Fragment>
-            ))}
+            {renderMenuItems(navItems)}
           </Menu>
           <Menu menuItemStyles={menuItemStyles}>
             <Anon>
@@ -166,20 +184,13 @@ const Nav = () => {
               ))}
             </LoggedIn>
             <Menu>
-              <div style={{ marginBottom: 16 }}>
-                <Switch
-                  id="collapse"
-                  checked={collapsed}
-                  onChange={() => setCollapsed(!collapsed)}
-                  label="Collapse"
-                />
-              </div>
-              <div style={{ marginBottom: 16 }}>
-                <Switch
-                  id="theme"
-                  checked={theme === 'dark'}
-                  onChange={handleThemeChange}
-                  label="Dark theme"
+              <div className='fooder_nav' style={{ marginBottom: 16, textAlign: 'center' }}>
+                <Icon
+                color='teal'
+                  name={collapsed ? 'angle double right' : 'angle double left'}
+                  size='big'
+                  onClick={() => setCollapsed(!collapsed)}
+                  style={{ cursor: 'pointer' }}
                 />
               </div>
             </Menu>
