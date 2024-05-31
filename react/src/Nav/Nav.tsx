@@ -9,6 +9,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { menuClasses } from './utilityClasses';
 import { MenuItemStyles } from './Menu';
 import { Switch } from 'Nav/Switch';
+import { navItems, authItems } from './NavData';
 
 type Theme = 'light' | 'dark';
 
@@ -56,18 +57,6 @@ const hexToRgba = (hex: string, alpha: number) => {
   const b = parseInt(hex.slice(5, 7), 16);
 
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-
-};
-
-const handleLogoutClick = () => {
-  handleLogout();
-  // Redirect to login page
-  window.location.href = '/login';
-
-  return <div>
-    
-  </div>
-  
 };
 
 const Nav = () => {
@@ -84,7 +73,6 @@ const Nav = () => {
   const [hasImage, setHasImage] = useState(false);
   const [theme, setTheme] = useState<Theme>('light');
 
-  // handle on theme change event
   const handleThemeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTheme(e.target.checked ? 'dark' : 'light');
   };
@@ -144,63 +132,40 @@ const Nav = () => {
             <MenuItem>
               <NavLink to="/" className="button-link" ><Icon name='home' size='large' /> Home </NavLink>
             </MenuItem>
-            <LoggedIn>
-              <SubMenu label={<span><Icon name='newspaper' size='large' /> Nghiêm Huấn </span>}>
-                <SubMenu label='Tu Học'>
+            {navItems.map((item, index) => (
+              <React.Fragment key={index}>
+                {item.submenu ? (
+                  <SubMenu label={<span><Icon name={item.icon} size='large' /> {item.text}</span>}>
+                    {item.submenu.map((subItem, subIndex) => (
+                      <MenuItem key={subIndex}>
+                        <NavLink to={subItem.to} className="button-link">{subItem.text}</NavLink>
+                      </MenuItem>
+                    ))}
+                  </SubMenu>
+                ) : (
                   <MenuItem>
-                    <NavLink to="/underdevpage" className="button-link">Tu Bát Quan Trai</NavLink>
+                    <NavLink to={item.to} className="button-link"><Icon name={item.icon} size='large' /> {item.text}</NavLink>
                   </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/underdevpage" className="button-link">Bậc học</NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/questions" className="button-link">Ngân hàng đề thi trắc nghiệm</NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/practicemulchoice" className="button-link">Ôn thi trắc Nghiệm</NavLink>
-                  </MenuItem>
-                </SubMenu >
-                <SubMenu label='Huấn Luyện'>
-                  <MenuItem>
-                    <NavLink to="/underdevpage" className="button-link">Huynh Trưởng</NavLink>
-                  </MenuItem>
-                  <MenuItem>
-                    <NavLink to="/underdevpage" className="button-link">Đoàn Sinh</NavLink>
-                  </MenuItem>
-                </SubMenu>
-              </SubMenu>
-              <SubMenu label={<span><Icon name='address card' size='large' /> Nội Vụ </span>}>
-                <MenuItem>
-                  <NavLink to="/underdevpage" className="button-link">Sách tịch Huynh Trưởng</NavLink>
-                </MenuItem>
-              </SubMenu>
-              <SubMenu label={<span><Icon name='archive' size='large' /> Thư Ký </span>}>
-                <MenuItem>
-                  <NavLink to="/underdevpage" className="button-link">Văn thư</NavLink>
-                </MenuItem>
-              </SubMenu>
-              <MenuItem>
-                <NavLink to="/underdevpage" className="button-link"><Icon name='book' size='large' /> Tu Thư</NavLink>
-              </MenuItem>
-            </LoggedIn>
+                )}
+              </React.Fragment>
+            ))}
           </Menu>
           <Menu menuItemStyles={menuItemStyles}>
             <Anon>
-              <MenuItem>
-                <NavLink to={{ pathname: "/login" }} className="button-link"><Icon name='hand point right outline' size='large' />Log In</NavLink>
-              </MenuItem>
-              <MenuItem>
-                <NavLink to="/signup" className="button-link"><Icon name='hand point right outline' size='large' />Sign Up</NavLink>
-              </MenuItem>
+              {authItems.anon.map((item, index) => (
+                <MenuItem key={index}>
+                  <NavLink to={item.to} className="button-link"><Icon name={item.icon} size='large' /> {item.text}</NavLink>
+                </MenuItem>
+              ))}
             </Anon>
+            <LoggedIn>
+              {authItems.loggedIn.map((item, index) => (
+                <MenuItem key={index} onClick={handleLogout}>
+                  <Icon name={item.icon} size='large' /> {item.text}
+                </MenuItem>
+              ))}
+            </LoggedIn>
             <Menu>
-              <LoggedIn>
-                <Menu menuItemStyles={menuItemStyles}>
-                  <MenuItem onClick={handleLogout} ><Icon name='power off' size='large' />Log Out</MenuItem>
-                </Menu>
-              </LoggedIn>
-              <MenuItem>
-              </MenuItem>
               <div style={{ marginBottom: 16 }}>
                 <Switch
                   id="collapse"
@@ -210,7 +175,6 @@ const Nav = () => {
                 />
               </div>
               <div style={{ marginBottom: 16 }}>
-
                 <Switch
                   id="theme"
                   checked={theme === 'dark'}
@@ -227,8 +191,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
-function handleLogout() {
-  throw new Error('Function not implemented.');
-}
-
