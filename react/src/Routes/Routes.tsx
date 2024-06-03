@@ -24,6 +24,7 @@ import BacHocForm from './BacHoc/BacHocForm';
 import BHD from "./BHD/BHD";
 import BHDForm from "./BHD/BHDForm";
 import BHDs from "./BHD/BHDs";
+import FormInfor from "./FormInfor/Forminfor"
 
 const Routes = () => (
   <ReactRouterRoutes>
@@ -43,6 +44,16 @@ const Routes = () => (
         </RequireAuth>
       }
     />
+
+<Route
+      path="/forminfor"
+      element={
+        <RequireAuth>
+          <FormInfor />
+        </RequireAuth>
+      }
+    />
+
     <Route
       path="/change-password"
       element={

@@ -8,9 +8,12 @@ import './responsive.css';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { menuClasses } from './utilityClasses';
 import { MenuItemStyles } from './Menu';
-import { Switch } from 'Nav/Switch';
 import { navItems, authItems } from './NavData';
-import { dark, light } from '@mui/material/styles/createPalette';
+import { Logo } from './Logo'
+import { SidebarHeader } from './SidebarHeader';
+import { Typography } from './Typography';
+
+
 
 type Theme = 'light' | 'dark';
 
@@ -125,9 +128,9 @@ const Nav = () => {
                 </span>
               }
             >
-              
+
               {renderMenuItems(item.submenu)}
-              
+
             </SubMenu>
           </LoggedIn>
         );
@@ -146,57 +149,64 @@ const Nav = () => {
   };
 
   return (
-    <div style={{ display: "flex", height: "100vh", width: "5vh" }} > {/* Adjusting the width */}
-      <Sidebar
-        collapsed={collapsed}
-        toggled={toggled}
-        onBackdropClick={() => setToggled(false)}
-        backgroundColor={hexToRgba(themes[theme].sidebar.backgroundColor, hasImage ? 0.9 : 1)}
-        rootStyles={{
-          color: themes[theme].sidebar.color,
-        }}
-      >
-        <div style={{ flex: 1, marginBottom: '32px' }}>
-          <Menu menuItemStyles={menuItemStyles} >
-            <div style={{ marginTop: '0.5cm' }}>
-              <Image src='./icon/logohead.png' centered size='medium' />
-            </div>
-            <MenuItem>
-            </MenuItem>
-            <MenuItem>
-              <NavLink to="/" className="button-link" ><Icon name='home' size='large' /> Home </NavLink>
-            </MenuItem>
-            {renderMenuItems(navItems)}
-          </Menu>
-          <Menu menuItemStyles={menuItemStyles}>
-            <Anon>
-              {authItems.anon.map((item, index) => (
-                <MenuItem key={index}>
-                  <NavLink to={item.to} className="button-link"><Icon name={item.icon} size='large' /> {item.text}</NavLink>
-                </MenuItem>
-              ))}
-            </Anon>
-            <LoggedIn>
-              {authItems.loggedIn.map((item, index) => (
-                <MenuItem key={index} onClick={handleLogout}>
-                  <Icon name={item.icon} size='large' /> {item.text}
-                </MenuItem>
-              ))}
-            </LoggedIn>
-            <Menu>
-              <div className='fooder_nav' style={{ marginBottom: 16, textAlign: 'center' }}>
-                <Icon
-                color='teal'
-                  name={collapsed ? 'angle double right' : 'angle double left'}
-                  size='big'
-                  onClick={() => setCollapsed(!collapsed)}
-                  style={{ cursor: 'pointer' }}
-                />
+    <div className='app'>
+      <div style={{ display: "flex", height: "100vh", width: "5vh" }} > {/* Adjusting the width */}
+        <Sidebar
+          collapsed={collapsed}
+          toggled={toggled}
+          onBackdropClick={() => setToggled(false)}
+          backgroundColor={hexToRgba(themes[theme].sidebar.backgroundColor, hasImage ? 0.9 : 1)}
+          rootStyles={{
+            color: themes[theme].sidebar.color,
+          }}
+        >
+          <div style={{ flex: 1, marginBottom: '32px' }}>
+            <Menu menuItemStyles={menuItemStyles} >
+              <div style={{ marginTop: '0.5cm' }}>
+                <div className='logoer' >
+
+                  <Image className='logoers' src='./icon/logohead3.png' centered size='medium' />
+
+                </div>
               </div>
+              <MenuItem>
+              </MenuItem>
+              <MenuItem>
+                <NavLink to="/" className="button-link" ><Icon name='home' size='large' /> Home </NavLink>
+              </MenuItem>
+              {renderMenuItems(navItems)}
             </Menu>
-          </Menu>
-        </div>
-      </Sidebar>
+            <Menu menuItemStyles={menuItemStyles}>
+              <Anon>
+                {authItems.anon.map((item, index) => (
+                  <MenuItem key={index}>
+                    <NavLink to={item.to} className="button-link"><Icon name={item.icon} size='large' /> {item.text}</NavLink>
+                  </MenuItem>
+                ))}
+              </Anon>
+              <LoggedIn>
+                {authItems.loggedIn.map((item, index) => (
+                  <MenuItem key={index} onClick={handleLogout}>
+                    <Icon name={item.icon} size='large' /> {item.text}
+                  </MenuItem>
+                ))}
+              </LoggedIn>
+             
+              <Menu>
+                <div className='fooder_nav' style={{ marginBottom: 16, textAlign: 'center' }}>
+                  <Icon
+                    color='teal'
+                    name={collapsed ? 'angle double right' : 'angle double left'}
+                    size='big'
+                    onClick={() => setCollapsed(!collapsed)}
+                    style={{ cursor: 'pointer' }}
+                  />
+                </div>
+              </Menu>
+            </Menu>
+          </div>
+        </Sidebar>
+      </div>
     </div>
   );
 };

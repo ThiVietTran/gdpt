@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
+import { text } from 'stream/consumers';
 
 interface NavItem {
   to: string;
@@ -53,6 +54,11 @@ export const navItems: NavItem[] = [
     ],
   },
   { to: '/underdevpage', text: 'Tu Thư', icon: 'book' },
+{
+  to:'/Forminfor',
+  text: 'Form',
+  icon: 'book',
+}
 ];
 
 export const authItems = {

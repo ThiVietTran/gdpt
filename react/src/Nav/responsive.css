@@ -13,10 +13,15 @@
   }
 
   #override.hidden,
-  .ui.menu:not(.vertical) .menu.hidden{
+  .ui.menu:not(.vertical) .menu.hidden {
     display: none;
   }
 }
+
+.app {
+  
+} 
+
 
 .button-link {
   display: inline-block;
@@ -26,8 +31,10 @@
   margin-left: -1.30cm;
   color: inherit;
 }
+
 .button-link:hover {
   text-decoration: none;
+  
 }
 
 
@@ -38,17 +45,22 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: calc(15vh - 3cm); /* Adjusted width */
-  background-color: #ffffff; /* Sidebar background color */
-  color: #607489; /* Sidebar text color */
+  width: calc(15vh - 3cm);
+  /* Adjusted width */
+  background-color: #ffffff;
+  /* Sidebar background color */
+  color: #607489;
+  /* Sidebar text color */
 }
 
 .menu {
-  font-size: 20px; /* Increased font size */
+  font-size: 20px;
+  /* Increased font size */
 }
 
 .menu-item {
-  padding: 10px; /* Adjust the padding as needed */
+  padding: 10px;
+  /* Adjust the padding as needed */
 }
 
 .menu-item .button-link {
@@ -57,23 +69,50 @@
 }
 
 .menu-item .button-link:hover {
-  color: #0098e5; /* Hover color */
+  color: #0098e5;
+  /* Hover color */
 }
 
 .menu-item.active {
-  background-color: #c5e4ff; /* Active menu item background color */
-  color: #44596e; /* Active menu item text color */
+  background-color: #c5e4ff;
+  /* Active menu item background color */
+  color: #44596e;
+  /* Active menu item text color */
 }
 
 .fooder_nav {
   margin-top: 0.5cm;
-padding-top: 8px;
-padding-bottom: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   border-radius: 30px;
   background-color: rgb(192, 228, 192);
 
 }
+
 .fooder_nav:hover {
   background-color: rgb(3, 54, 3);
 }
 
+.logoer {
+  scale: 100%;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.logoers {
+  scale: 100%;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
