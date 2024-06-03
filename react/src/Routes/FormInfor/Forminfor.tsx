@@ -193,6 +193,8 @@ const App: React.FC = () => {
                 <fieldset>
 
                     <form onSubmit={handleSubmit}>
+                        <br/>
+                        <br/>
                         <h2>LÝ LỊCH :</h2>
                         <label htmlFor="firstname">Họ và tên :</label>
                         <input
@@ -204,26 +206,30 @@ const App: React.FC = () => {
                             placeholder="Enter your name"
                             required
                         />
-                        <label htmlFor="birthDate">Ngày tháng năm sinh :</label>
-                        <input
-                            type="date"
-                            name="birthDate"
-                            id="birthDate"
-                            value={birthDate}
-                            onChange={(e) => setBirthDate(e.target.value)}
-                            placeholder="Enter your birth date"
-                            required
-                        />
-                        <label htmlFor="birthPlace">Nơi sinh :</label>
-                        <input
-                            type="text"
-                            name="birthPlace"
-                            id="birthPlace"
-                            value={birthPlace}
-                            onChange={(e) => setBirthPlace(e.target.value)}
-                            placeholder="Enter birth place"
-                            required
-                        />
+                        <div className='form-row'>
+                            <label htmlFor="birthPlace">Nơi sinh :</label>
+                            <input
+                                type="text"
+                                name="birthPlace"
+                                id="birthPlace"
+                                value={birthPlace}
+                                onChange={(e) => setBirthPlace(e.target.value)}
+                                placeholder="Enter birth place"
+                                required
+                            />
+                            <label htmlFor="birthDate">Ngày tháng năm sinh :</label>
+                            <div className='input_row'>
+                                <input
+                                    type="date"
+                                    name="birthDate"
+                                    id="birthDate"
+                                    value={birthDate}
+                                    onChange={(e) => setBirthDate(e.target.value)}
+                                    placeholder="Enter your birth date"
+                                    required
+                                />
+                            </div>
+                        </div>
                         <label htmlFor="occupation">Nghề Nghiệp :</label>
                         <input
                             type="text"
@@ -679,11 +685,11 @@ const App: React.FC = () => {
                             placeholder="To"
                             required
                         />
-                        <br/>
-                       
-                            <button className='btnfooter' type="reset" onClick={handleReset}>Reset</button>
-                            <button className='btnfooter' type="submit">Submit</button>
-                    
+                        <br />
+
+                        <button className='btnfooter' type="reset" onClick={handleReset}>Reset</button>
+                        <button className='btnfooter' type="submit">Submit</button>
+
                     </form>
                 </fieldset>
             </div>

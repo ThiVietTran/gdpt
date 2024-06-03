@@ -181,3 +181,38 @@ textarea {
     flex-direction: column;
   
  }
+
+
+
+.form-row {
+    width: 134%;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;  /* Ensure items do not wrap */
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.form-row label {
+
+    flex: 0 0 150px; /* Fixed width for labels */
+}
+
+.form-row input {
+    width: 30%;
+    flex: 1 0 auto; /* Flexible width for inputs */
+    padding: 0.5em;
+    margin-right: 15px;
+    margin-left: -2cm;
+}
+
+.input_row {
+    width: 100%;
+    flex: 1 0 auto; /* Flexible width for inputs */
+    padding: 0.5em;
+    margin-right: 20px;
+    margin-left: 70px;
+}
+.form-row .half-width {
+    flex: 1 0 45%; /* Adjusted width for half width inputs */
+}
